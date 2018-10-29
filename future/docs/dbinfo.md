@@ -1,5 +1,5 @@
 用户表user:
 
-|用户编码|userid|
-|---------|--------|
-|222222|33333333|
+|用户id|userid|
+|用户名|username|
+|密码|userpassword|
