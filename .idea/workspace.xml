@@ -2,9 +2,311 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="072b932f-e7ab-407a-97ca-9a617bdf4928" name="Default" comment="login">
-      <change afterPath="$PROJECT_DIR$/future/docs/test.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/docs/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/login/templates/login/page-login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/YoungFolks.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/css/add-ons.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/css/jquery.mmenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/WeatherIcons-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/climacons-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/climacons-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/climacons-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/climacons-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/weathericons-regular-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/weathericons-regular-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/weathericons-regular-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/fonts/weathericons-regular-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/ico/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/ico/apple-touch-icon-114x114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/ico/apple-touch-icon-120x120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/ico/apple-touch-icon-144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/ico/apple-touch-icon-152x152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/ico/apple-touch-icon-57x57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/ico/apple-touch-icon-72x72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/ico/apple-touch-icon-76x76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/ico/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/ico/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/avatar1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/avatar2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/avatar3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/avatar4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/avatar5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/avatar6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/avatar7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/bg1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/browser-chrome-big.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/browser-firefox-big.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/browser-ie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/browser-opera.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/browser-safari.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/flags/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/flags/USA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/flat-landscape.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/flat-sun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/gallery/photo9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/general/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/general/general-img-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/general/general-img-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/general/general-img-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/img/sunny-large.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/core.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/jquery.mmenu.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/activity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/buttons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/charts-flot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/charts-other.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/charts-xcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/font-awesome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/form-dropzone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/form-editors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/form-elements.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/form-validation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/form-wizard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/form-x-editable-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/form-x-editable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/gallery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/glyphicon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/invoice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/mailbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/map-basic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/map-vector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/nestable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/page-404.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/page-lockscreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/page-login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/page-register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/page-timeline.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/pricing-tables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/table-advanced.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/table-editable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/table-responsive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/typography.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/ui-carousels.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/ui-elements.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/ui-lightbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/ui-modals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/ui-notifications.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/ui-panels.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/ui-portlets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/ui-progress-bar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/ui-slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/weathericons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/js/pages/widgets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/autosize/jquery.autosize.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootkit/css/bootkit.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootkit/js/bootkit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-colorpicker/img/bootstrap-colorpicker/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-colorpicker/img/bootstrap-colorpicker/alpha.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-colorpicker/img/bootstrap-colorpicker/hue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-colorpicker/img/bootstrap-colorpicker/saturation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-datepicker/css/datepicker-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-datepicker/css/datepicker3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-markdown/js/bootstrap-markdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-markdown/js/markdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-markdown/js/to-markdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/chart-master/js/Chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/chosen/js/chosen.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/d3/js/d3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/dropzone/css/dropzone.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/dropzone/images/spritemap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/dropzone/js/dropzone.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/easypiechart/js/jquery.easypiechart.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/editable/css/bootstrap-editable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/editable/inputs-ext/address/address.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/editable/inputs-ext/typeaheadjs/typeaheadjs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/editable/js/bootstrap-editable.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/flot-tooltip/js/jquery.flot.tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/flot/js/jquery.flot.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/flot/js/jquery.flot.pie.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/flot/js/jquery.flot.resize.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/flot/js/jquery.flot.spline.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/flot/js/jquery.flot.stack.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/flot/js/jquery.flot.time.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/fullcalendar/css/fullcalendar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/fullcalendar/js/fullcalendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/gauge/js/gauge.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/gmaps/gmaps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/isotope/css/jquery.isotope.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/isotope/js/jquery.isotope.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jquery-datatables-bs3/css/datatables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jquery-datatables-bs3/js/datatables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jquery-datatables/media/js/jquery.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jquery-ui-touch-punch/js/jquery.ui.touch-punch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jquery-ui/js/jquery-ui-1.10.4.custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jquery-validation/js/jquery.validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jquery/js/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jqvmap/data/jquery.vmap.sampledata.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jqvmap/jquery.vmap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jqvmap/jqvmap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jqvmap/maps/continents/jquery.vmap.africa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jqvmap/maps/continents/jquery.vmap.asia.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jqvmap/maps/continents/jquery.vmap.australia.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jqvmap/maps/continents/jquery.vmap.europe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jqvmap/maps/continents/jquery.vmap.north-america.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jqvmap/maps/continents/jquery.vmap.south-america.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/jqvmap/maps/jquery.vmap.world.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/justgage/js/justgage.1.0.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/magnific-popup/css/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/magnific-popup/js/magnific-popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/maskedinput/js/jquery.maskedinput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/maskedinput/js/jquery.maskedinput.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/mockjax/js/jquery.mockjax.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/modernizr/js/modernizr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/moment/js/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/moment/js/moment.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/morris/css/morris.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/morris/js/morris.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/nanoscroller/js/nanoscroller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/owl-carousel/css/owl.carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/owl-carousel/css/owl.theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/owl-carousel/js/owl.carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/placeholder/js/jquery.placeholder.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/pnotify/css/pnotify.custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/pnotify/js/pnotify.custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/raphael/js/raphael.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/scrollbar/css/mCustomScrollbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/select2/select2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/select2/select2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/select2/select2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/sparkline/js/jquery.sparkline.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/store-js/js/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/summernote/css/summernote-bs3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/summernote/css/summernote.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/summernote/js/summernote.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/touchpunch/js/jquery.ui.touch-punch.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/wizard/js/jquery.bootstrap.wizard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/xcharts/css/xcharts.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/plugins/xcharts/js/xcharts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/css/animate.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/css/pace.preloader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/js/jquery-2.1.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/js/jquery-migrate-1.2.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/js/pace.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/skycons/css/skycons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/skycons/fonts/WeatherIcons-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/skycons/fonts/weathericons-regular-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/skycons/fonts/weathericons-regular-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/skycons/fonts/weathericons-regular-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/skycons/fonts/weathericons-regular-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/assets/vendor/skycons/js/skycons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/calendar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/chart-flot.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/chart-other.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/chart-xchart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/form-dropzone.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/form-editors.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/form-elements.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/form-validation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/form-wizard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/form-x-editable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/gallery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/icons-font-awesome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/icons-glyphicons.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/icons-weathericons.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/mailbox-compose.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/mailbox-inbox.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/mailbox-message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/map-basic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/map-vector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/page-404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/page-500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/page-activity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/page-invoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/page-lockscreen1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/page-lockscreen2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/page-login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/page-pricing-tables.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/page-profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/page-recover-password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/page-register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/page-timeline.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/table-advanced.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/table-basic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/table-editable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/table-responsive.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/typography.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-animation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-basic-elements.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-buttons.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-carousels.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-lightbox.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-modals.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-nestable-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-notifications.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-panels.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-portlets.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-progress-bars.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-sliders.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/ui-tabs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/widgets.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/找网站模板就上【模板之家】cssMoban.com.url" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/future/static/temp/说明.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/future/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/future/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/future/docs/test.md" beforeDir="false" afterPath="$PROJECT_DIR$/future/docs/test.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/future/future/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/future/future/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/future/login/models/authimages.py" beforeDir="false" afterPath="$PROJECT_DIR$/future/login/models/authimages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/future/login/templates/login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/future/login/templates/login/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/future/login/templates/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/future/login/templates/login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/future/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/future/login/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/future/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/future/login/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,14 +354,64 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1280571612">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="23" />
+          <entry key="md" value="1" />
+          <entry key="py" value="266" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="23" />
+          <entry key="Markdown" value="1" />
+          <entry key="Python" value="266" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="md" value="2" />
+          <entry key="py" value="2" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/future/login/templates/login/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+            <state relative-caret-position="133">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/future/login/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,8 +419,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/future/login/templates/login/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+            <state relative-caret-position="38">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -76,34 +428,49 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/future/login/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            <state relative-caret-position="133">
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1541855871208" expanded="true" signature="136:141" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/future/docs/test.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor />
+              <first_editor relative-caret-position="19">
+                <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="30" />
+              </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/future/docs/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/future/future/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43">
+              <caret line="116" selection-start-line="116" selection-end-line="116" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/future/login/models/authimages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="38">
+              <caret line="2" column="96" selection-start-line="2" selection-start-column="96" selection-end-line="2" selection-end-column="96" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1541855809738" expanded="true" signature="158:163" ph="..." />
+                <marker date="1541945324353" expanded="true" signature="168:169" ph="..." />
               </folding>
             </state>
           </provider>
@@ -127,28 +494,27 @@
       <list>
         <option value="$PROJECT_DIR$/future/future/urls.py" />
         <option value="$PROJECT_DIR$/future/future/__init__.py" />
-        <option value="$PROJECT_DIR$/future/future/settings.py" />
         <option value="$PROJECT_DIR$/future/login/models.py" />
+        <option value="$PROJECT_DIR$/future/login/templates/login/login.html" />
         <option value="$PROJECT_DIR$/future/login/urls.py" />
         <option value="$PROJECT_DIR$/future/login/templates/login/index.html" />
-        <option value="$PROJECT_DIR$/future/login/templates/login/login.html" />
-        <option value="$PROJECT_DIR$/future/login/models/authimages.py" />
+        <option value="$PROJECT_DIR$/future/docs/test.md" />
+        <option value="$PROJECT_DIR$/future/future/settings.py" />
         <option value="$PROJECT_DIR$/future/login/views.py" />
+        <option value="$PROJECT_DIR$/future/login/models/authimages.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="431" />
-    <option name="y" value="47" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="353" />
     <option name="width" value="929" />
-    <option name="height" value="721" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -161,30 +527,11 @@
               <item name="Operational_background" type="462c0819:PsiDirectoryNode" />
               <item name="future" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Operational_background" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Operational_background" type="462c0819:PsiDirectoryNode" />
-              <item name="future" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Operational_background" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Operational_background" type="462c0819:PsiDirectoryNode" />
-              <item name="future" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Operational_background" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Operational_background" type="462c0819:PsiDirectoryNode" />
-              <item name="future" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -240,10 +587,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="431" y="47" width="929" height="721" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22109988" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14657739" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -253,7 +600,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49925596" visible="true" weight="0.34812286" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49925596" visible="true" weight="0.15993538" />
       <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50074404" side_tool="true" weight="0.32956383" />
@@ -284,13 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/future/future/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="127" column="23" lean-forward="true" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/future/login/models/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -298,24 +638,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding>
-            <element signature="e#630#662#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/future/login/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/future/login/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/future/login/admin.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -334,47 +661,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/future/login/templates/login/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/future/login/templates/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/future/login/models/authimages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1541855809738" expanded="true" signature="158:163" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/future/login/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1541855871208" expanded="true" signature="136:141" ph="..." />
-          </folding>
+        <state relative-caret-position="133">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/future/docs/test.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor />
+          <first_editor relative-caret-position="19">
+            <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="30" />
+          </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/future/docs/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/future/login/templates/login/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/future/login/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/future/future/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/future/login/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/future/login/models/authimages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="96" selection-start-line="2" selection-start-column="96" selection-end-line="2" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1541945324353" expanded="true" signature="168:169" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
