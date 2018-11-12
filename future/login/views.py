@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .viewmodels.privatersakey import prvidekey
+
+from crypto.library.cryptor import Cryptor
 
 # Create your views here.
 def auth(request):
@@ -8,10 +11,11 @@ def auth(request):
     elif request.method == 'POST':
         user = request.POST.get('user')
         password = request.POST.get('password')
-        return render(request, 'login/index.html', {'users': user, 'passwords': password, 'session':request.session.get('code')})
+        rsapub,rsaprivte= prvidekey()
+        return render(request, 'login/index.html', {'users': user, 'passwords': password, 'session':request.session.get('code'),'pubp':rsapub,'pubpr':rsaprivte})
 def checkout(request):
         from io import BytesIO
-        from .models.authimages import check_code
+        from .viewmodels.authimages import check_code
         img, code = check_code()
         stream = BytesIO()
         img.save(stream, 'png')
