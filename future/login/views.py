@@ -20,3 +20,4 @@ def checkout(request):
         img.save(stream, 'png')
         request.session['code'] = code
         return HttpResponse(stream.getvalue())
+
