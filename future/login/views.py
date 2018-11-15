@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .viewmodels.privatersakey import prvidekey
-import rsa
 
 # Create your views here.
 def auth(request):
