@@ -1,5 +1,5 @@
 import random
-from PIL import (Image,ImageDraw,ImageFont,ImageFilter)
+from PIL import (Image, ImageDraw, ImageFont, ImageFilter)
 def check_code(width=100, height=30, char_length=5, font_file='static/ARLRDBD.ttf', font_size=24):
     code = []
     img = Image.new(mode='RGB', size=(width, height), color=(255, 255, 255))
