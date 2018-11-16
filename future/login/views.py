@@ -8,16 +8,17 @@ def auth(request):
     elif request.method == 'POST':
         user = request.POST.get('user')
         password = request.POST.get('password')
-        (pubkey, privkey) = rsa.newkeys(1024)
-        return render(request, 'login/index.html', {'users': user, 'passwords': password, 'session':request.session.get('code'), 'rsapub': pubkey.save_pkcs1(), 'rsaprivate': privkey.save_pkcs1()})
+        return render(request, 'login/index.html', {'users': user, 'passwords': password, 'session':request.session.get('code')})
 def checkout(request):
-        from io import BytesIO
-        from .viewmodels.authimages import check_code
-        img, code = check_code()
-        stream = BytesIO()
-        img.save(stream, 'png')
-        request.session['code'] = code
-        return HttpResponse(stream.getvalue())
+    from io import BytesIO
+    from .viewmodels.authimages import check_code
+    img, code = check_code()
+    stream = BytesIO()
+    img.save(stream, 'png')
+    request.session['code'] = code
+    return HttpResponse(stream.getvalue())
 def index(request):
     return render(request, 'login/indexs.html')
+def logins(request):
+    return render(request, 'login/logins.html')
 
