@@ -447,10 +447,33 @@
 							</ol>
 						</div>
 						<div class="pull-right">
-							<h2>Dashboard</h2>
+						<h2>Dashboard</h2>
 						</div>
 					</div>
 					<!-- End Page Header -->
+				<div class="row">
+					<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+						<div class="panel panel-default">
+						<div class="panel-heading">
+							<h6><i class="fa fa-signal"></i>Server Usage</h6>									
+							<div class="panel-actions">
+								<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+							<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+						</div>
+						<p>You can update a chart periodically to get a real-time effect by using a timer to insert the new data in the plot and redraw it.</p>
+					</div>
+					<div class="panel-body">
+						<div id="realtimeServerUsage" style="height:200px;"></div>
+							<div class="bk-margin-top-10 bk-padding-right-10 pull-right">									
+										<p>Time between updates: <input id="updateInterval" type="text" value="" style="text-align: right; width:5em" /> milliseconds</p>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
 				</div>
 				<!-- End Main Page -->
 
