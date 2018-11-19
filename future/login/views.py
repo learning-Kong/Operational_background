@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from future import config
+import json
+import requests
 
 # Create your views here.
 def auth(request):
@@ -9,7 +11,8 @@ def auth(request):
     elif request.method == 'POST':
         user = request.POST.get('user')
         password = request.POST.get('password')
-        return render(request, 'login/index.html', {'users': user, 'passwords': password, 'session':request.session.get('code')})
+        aa = request.POST.get('authimage')
+        return render(request, 'login/index.html', {'users': user, 'passwords': password, 'session':aa})
 def checkout(request):
     from io import BytesIO
     from .viewmodels.authimages import check_code
@@ -27,8 +30,11 @@ def logins(request):
         user = request.POST.get('user')
         password = request.POST.get('password')
         params = { 'name': user, "password": password, }
-        r = request.post("%s/user/login" %config.API_ADDR,data = params)
-        if r.status_code != 200:
+        head = {"Content-type":"application/json"}
+        r = requests.post("%s/user/login" %(config.API_ADDR),data = json.dumps(params), headers = head )
+        request.session=r.text
+        print(r, r.text,'aa', r.status_code)
+        if r.status_code != 200 :
             raise Exception("%s : %s" % (r.status_code, r.text))
         j = r.json()
-        return j
+        return HttpResponse(request.session)
