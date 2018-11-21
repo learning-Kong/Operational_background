@@ -7,7 +7,7 @@ import requests
 # Create your views here.
 def auth(request):
     if request.method == 'GET':
-        return render(request, 'login/login1.html')
+        return render(request, 'login/login.html')
     elif request.method == 'POST':
         user = request.POST.get('user')
         password = request.POST.get('password')
@@ -22,10 +22,10 @@ def checkout(request):
     request.session['code'] = code
     return HttpResponse(stream.getvalue())
 def index(request):
-    return render(request, 'login/indexs.html')
+    return render(request, 'login/index2.html')
 def logins(request):
     if request.method == 'GET':
-        return render(request, 'login/login1.html')
+        return render(request, 'login/login.html')
     elif request.method == 'POST':
         user = request.POST.get('user')
         password = request.POST.get('password')
