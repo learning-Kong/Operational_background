@@ -7,7 +7,7 @@ import requests
 # Create your views here.
 def auth(request):
     if request.method == 'GET':
-        return render(request, 'login/login.html')
+        return render(request, 'login/login1.html')
     elif request.method == 'POST':
         user = request.POST.get('user')
         password = request.POST.get('password')
@@ -25,15 +25,15 @@ def index(request):
     return render(request, 'login/indexs.html')
 def logins(request):
     if request.method == 'GET':
-        return render(request, 'login/login.html')
+        return render(request, 'login/login1.html')
     elif request.method == 'POST':
         user = request.POST.get('user')
         password = request.POST.get('password')
         params = { 'name': user, "password": password, }
         head = {"Content-type":"application/json"}
         r = requests.post("%s/user/login" %(config.API_ADDR),data = json.dumps(params), headers = head )
-        request.session=r.text
-        print(r, r.text,'aa', r.status_code)
+        request.session = r.text
+        print(r, r.text, 'aa', r.status_code)
         if r.status_code != 200 :
             raise Exception("%s : %s" % (r.status_code, r.text))
         j = r.json()
