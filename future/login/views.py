@@ -22,7 +22,7 @@ def checkout(request):
     request.session['code'] = code
     return HttpResponse(stream.getvalue())
 def index(request):
-    return render(request, 'login/index2.html')
+    return render(request, 'base.html')
 def logins(request):
     if request.method == 'GET':
         return render(request, 'login/login.html')
