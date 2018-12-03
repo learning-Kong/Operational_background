@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'login',
 	'display',
-    'tests',
+    'tests.apps.TestsConfig',
 ]
 
 MIDDLEWARE = [
@@ -78,14 +78,14 @@ WSGI_APPLICATION = 'future.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         'ENGINE': 'django.db.backends.mysql',
-#         'HOST': '115.159.40.122',
-#         'PORT': '3306',
-#         'NAME': 'lk_test',
-#         'USER': 'lk_test_user',
-#         'PASSWORD': 'Aa123456',
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         'ENGINE': 'django.db.backends.mysql',
+         'HOST': '115.159.40.122',
+         'PORT': '3306',
+         'NAME': 'test',
+         'USER': 'test_user',
+         'PASSWORD': 'Aa123456',
     }
 }
 
