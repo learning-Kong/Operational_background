@@ -22,7 +22,7 @@
 |authorityid|权限模块id|
 |authorityname|权限模块名称|
 
-### 1、table authority
+### 4、table authority
 
 |字段|对应意义|
 |-----|---------|

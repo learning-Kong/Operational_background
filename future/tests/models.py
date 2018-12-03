@@ -16,8 +16,7 @@ class Authorityinfo(models.Model):
     authorityid = models.CharField(max_length=30, primary_key = True)
     authorityname = models.CharField(max_length=30)
 
-class Authority(models.Model):
-    userid = models.CharField(max_length=30)
-    groupid = models.CharField(max_length=30)
-    authorityid = models.CharField(max_length=30)
-#class Memberships(models.Model):
+
+class Memberships(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE,default='')
+    authorityinfo = models.ForeignKey(Authorityinfo, on_delete=models.CASCADE,default='')

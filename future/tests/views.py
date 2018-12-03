@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . import models
-from .models import User
+from .tsetsmodels.authmodels import auths
 
 # Create your views here.
 def test(request):
@@ -13,6 +13,12 @@ def test(request):
         #dbpassword = models.User.objects.get(password=password)
         try:
             dbuser = models.User.objects.get(username=user, password=password)
+            request.session=dbuser.all()
+            print(request.session)
             return render(request, 'tests/indexs.html', {'user': dbuser.username, 'password': dbuser.password})
         except:
             return HttpResponse('test')
+
+@auths(pages1='test01' ,user1='test')
+def aa(request):
+    return HttpResponse('test')

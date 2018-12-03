@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from future import config
 import json
-import requests
+
 
 # Create your views here.
 def auth(request):
