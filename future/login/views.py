@@ -1,6 +1,9 @@
+from django.contrib.sites import requests
 from django.shortcuts import render
 from django.http import HttpResponse
+from . import models
 from future import config
+from .viewmodels.authmodels import auths
 import json
 
 
@@ -38,3 +41,24 @@ def logins(request):
             raise Exception("%s : %s" % (r.status_code, r.text))
         j = r.json()
         return HttpResponse(request.session)
+
+def test(request):
+    if request.method == 'GET':
+        return render(request, 'login/test1.html')
+    elif request.method == 'POST':
+        user=request.POST.get('user')
+        password=request.POST.get('password')
+        print(user,password)
+        dbpassword = models.User.objects.get(password=password)
+        try:
+            dbuser = models.User.objects.get(username=user, password=password)
+            print(dbuser.username)
+            request.session['username'] =  dbuser.username
+            print(request.session)
+            return HttpResponse(request.session['username'])
+        except:
+            return HttpResponse('test1')
+
+@auths(pages1='test')
+def aa(request):
+    return HttpResponse('test2')
