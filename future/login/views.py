@@ -26,7 +26,7 @@ def checkout(request):
     return HttpResponse(stream.getvalue())
 def index(request):
     return render(request, 'base.html')
-def logins(request):
+def loginold(request):
     if request.method == 'GET':
         return render(request, 'login/login.html')
     elif request.method == 'POST':
@@ -42,23 +42,22 @@ def logins(request):
         j = r.json()
         return HttpResponse(request.session)
 
-def test(request):
+def login(request):
     if request.method == 'GET':
-        return render(request, 'login/test1.html')
+        return render(request, 'login/login.html')
     elif request.method == 'POST':
         user=request.POST.get('user')
         password=request.POST.get('password')
         print(user,password)
-        dbpassword = models.User.objects.get(password=password)
         try:
             dbuser = models.User.objects.get(username=user, password=password)
             print(dbuser.username)
             request.session['username'] =  dbuser.username
             print(request.session)
-            return HttpResponse(request.session['username'])
+            return render(request,'login/indexs.html')
         except:
-            return HttpResponse('test1')
+            return render(request,'login/login.html')
 
 @auths(pages1='test')
 def aa(request):
-    return HttpResponse('test2')
+    return render(request,'login/indexs.html')

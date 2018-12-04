@@ -10,6 +10,6 @@ def auths(pages1):
                 models.Memberships.objects.get(user__username=request.session['username'], authorityinfo__authorityname=pages1)
                 return  func(request)
             except:
-                return render(request,'tests/indexs.html',{'user':request.session['username'],'password':pages1})
+                return render(request,'login/login.html')
         return authpages
     return authtest

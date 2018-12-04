@@ -19,3 +19,4 @@ class Authorityinfo(models.Model):
 class Memberships(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,default='')
     authorityinfo = models.ForeignKey(Authorityinfo, on_delete=models.CASCADE,default='')
+
