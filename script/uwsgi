@@ -6,7 +6,7 @@ DESC="uwsgi daemon"
 NAME=uwsgi
 DAEMON=/usr/local/python3/bin/uwsgi
 CONFIGFILE=/data/operational_background/background/script/uwsgi.ini
-PIDFILE=/data/operational_background/background/script/uwsgi.log
+PIDFILE=/data/operational_background/log/uwsgi.pid
 SCRIPTNAME=/etc/init.d/$NAME
 
 
