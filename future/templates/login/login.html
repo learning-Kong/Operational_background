@@ -117,7 +117,7 @@
             success: function(data) {
                 var success = data.status;
                 if (success) {
-                    window.location="/node/workspace/";
+                    window.location="/login/home/";
                 } else {
                     $("#msg-info").html(data.message).css('color', 'red');
                     $('#msg-info').show();
