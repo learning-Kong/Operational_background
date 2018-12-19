@@ -25,5 +25,6 @@ def login(request):
                 data['message'] = "用户名不存在"
         return HttpResponse(json.dumps(data))
 
-
-
+def home(request):
+    if request.method == "GET":
+        return render(request, 'login/home.html')
