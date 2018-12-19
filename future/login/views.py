@@ -15,11 +15,14 @@ def login(request):
         if not User_name or User_password == pwd_null:
             data['message'] = "用户名或密码不能为空"
         else:
-            pwd_db = models.User.objects.get(name=User_name)
-            if User_password == pwd_db.password:
-                data['status'] = True
+            pwd_db = models.User.objects.filter(name=User_name).first()
+            if pwd_db:
+                if User_password == pwd_db.password:
+                    data['status'] = True
+                else:
+                    data['message'] = "密码错误"
             else:
-                data['message'] = "用户名或密码错误"
+                data['message'] = "用户名不存在"
         return HttpResponse(json.dumps(data))
 
 

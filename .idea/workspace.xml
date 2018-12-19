@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="072b932f-e7ab-407a-97ca-9a617bdf4928" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/future/future/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/future/future/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/future/login/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/future/login/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/future/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/future/login/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/future/templates/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/future/templates/login/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,8 +56,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/future/login/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+            <state relative-caret-position="480">
+              <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -441,7 +439,21 @@
       <option name="project" value="LOCAL" />
       <updated>1545198630195</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="login-title">
+      <created>1545206344153</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1545206344154</updated>
+    </task>
+    <task id="LOCAL-00041" summary="login-title">
+      <created>1545206482692</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1545206482692</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -782,8 +794,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/future/login/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        <state relative-caret-position="480">
+          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
