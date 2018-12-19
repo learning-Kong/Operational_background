@@ -87,6 +87,10 @@ DATABASES = {
         'PASSWORD': 'django123',
         'HOST': '115.159.40.122',
         'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset': 'utf8',
+        }
     }
 }
 

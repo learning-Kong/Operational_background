@@ -35,11 +35,11 @@
 
         <form id="account_login">
             <div class="form-group has-feedback">
-                <input id="account_code" name="account_code" type="text" class="form-control" placeholder="请输入用户名">
+                <input id="account_code" name="account_code" type="text" class="form-control"  placeholder="请输入用户名">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input id="pwd" name="pwd" type="password" class="form-control" placeholder="请输入密码" value="">
+                <input id="pwd" name="pwd" type="password" class="form-control"  placeholder="请输入密码" value="">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
         </form>
@@ -103,28 +103,21 @@
             });
 
         $.ajax({
-            cache: true,
             type: "POST",
             url:"/login/",
             dataType: "json",
-            contentType: 'application/json',
             <!--headers: {'X-CSRFtoken': $.cookie('csrftoken')},-->
-            data: JSON.stringify({param:{
+            data:{
                 "account_code":$('#account_login').find("input[name=account_code]").val(),
                 "pwd":$.sha256(pwd_const+$('#account_login').find("input[name=pwd]").val()),
-                "loginType":1,
-                "redirectUrl":"",
-                "areaCode":"86",
-                "type":0
-            }}),// 你的formid
-            async: false,
+            },
             error: function(request) {
                 alert("Connection error");
             },
             success: function(data) {
                 var success = data.status;
                 if (success) {
-                    window.location="/node/workspace";
+                    window.location="/node/workspace/";
                 } else {
                     $("#msg-info").html(data.message).css('color', 'red');
                     $('#msg-info').show();
