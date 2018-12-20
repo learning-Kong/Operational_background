@@ -1,9 +1,10 @@
 from django.shortcuts import render,HttpResponse
 import json
 from . import models
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 # Create your views here.
-
+@ensure_csrf_cookie
 def login(request):
     if request.method == 'GET':
         return render(request, 'login/login.html')
