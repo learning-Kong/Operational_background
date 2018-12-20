@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.views import serve
 
 from . import views
 
@@ -22,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.log_302),
     path('login/', include('login.urls')),
+    path('favicon.ico', serve, {'path': 'img/favicon.ico'})
 ]

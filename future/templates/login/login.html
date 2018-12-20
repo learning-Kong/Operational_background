@@ -96,17 +96,17 @@
         }
     });
     function login() {
-        $.ajaxSetup({
-                beforeSend: function(xhr,settings){
-                    xhr.setRequestHeader('X-CSRFtoken', $.cookie('csrftoken'));
-                }
-            });
+        <!--$.ajaxSetup({-->
+                <!--beforeSend: function(xhr,settings){-->
+                    <!--xhr.setRequestHeader('X-CSRFtoken', $.cookie('csrftoken'));-->
+                <!--}-->
+            <!--});-->
 
         $.ajax({
             type: "POST",
             url:"/login/",
             dataType: "json",
-            <!--headers: {'X-CSRFtoken': $.cookie('csrftoken')},-->
+            headers: {'X-CSRFtoken': $.cookie('csrftoken')},
             data:{
                 "account_code":$('#account_login').find("input[name=account_code]").val(),
                 "pwd":$.sha256(pwd_const+$('#account_login').find("input[name=pwd]").val()),
