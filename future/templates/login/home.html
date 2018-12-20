@@ -51,7 +51,7 @@
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">{{ request.session.username }}</span>
       </a>
 
       <div class="navbar-custom-menu">
@@ -60,7 +60,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">{{ request.session.username }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -75,7 +75,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-right">
-                  <a href="/Sign-out/" class="btn btn-default btn-flat">退出</a>
+                  <a href="/login/logout/" class="btn btn-default btn-flat">退出</a>
                 </div>
               </li>
             </ul>
@@ -95,7 +95,7 @@
           <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{ request.session.username }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
