@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.log_302),
     path('login/', include('login.urls')),
-    path('favicon.ico', serve, {'path': 'img/favicon.ico'})
+    path('favicon.ico', serve, {'path': 'img/favicon.ico'}),
+    path('user/', include('user.urls')),
 ]
