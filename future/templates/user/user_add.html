@@ -6,8 +6,9 @@
                 <h3 class="box-title"><b>用户注册管理界面</b></h3>
             </div>
             <!-- form start -->
-            <form class="form-horizontal">
+            <form class="form-horizontal" id="from_id">
               <div class="box-body">
+                  <p id="msg-info" class="login-box-msg"></p>
                   <div class="form-group">
                       <label for="inputUsername3" class="col-sm-2 control-label">用户名</label>
                       <div class="col-sm-10">
@@ -17,63 +18,82 @@
                   <div class="form-group">
                       <label for="inputtel3" class="col-sm-2 control-label">电话</label>
                       <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputtel3" placeholder="Telephone">
+                          <input type="text" class="form-control" id="inputtel3" name="inputtel3" placeholder="Telephone">
                       </div>
                   </div>
                   <div class="form-group">
                       <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                       <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                          <input type="email" class="form-control" id="inputEmail3" name="inputEmail3" placeholder="Email">
                       </div>
                   </div>
                   <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
                       <div class="col-sm-10">
-                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                          <input type="password" class="form-control" id="inputPassword3" name="inputPassword3" placeholder="Password">
                       </div>
                   </div>
                   <div class="form-group">
                     <label for="retypePassword3" class="col-sm-2 control-label">Retype Password</label>
                     <div class="col-sm-10">
-                     <input type="password" class="form-control" id="retypePassword3" placeholder="Retype Password">
+                     <input type="password" class="form-control" id="retypePassword3" name="retypePassword3" placeholder="Retype Password">
                     </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label">人员分配</label>
+                      <div class="col-sm-10">
+                          <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                              {% for info in Groupinfo %}
+                                <option value={{info.id}}>{{info.department}}-{{info.position}}</option>
+                              {% endfor %}
+                            </select>
+                      </div>
                   </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button  id="flush-submit" onclick="flush_submit()" class="btn btn-default">取消</button>
-                <button id="add-submit" onclick="add_submit()" class="btn btn-default pull-right">提交</button>
+                <button type="button" onclick="flush_submit()" class="btn btn-default">取消</button>
+                <button type="button" onclick="add_submit()" class="btn btn-info pull-right">提交</button>
               </div>
               <!-- /.box-footer -->
             </form>
           </div>
 {% endblock %}
+{% block script %}
+<script src="/static/plugins/jQueryUI/jquery.cookie.js"></script>
+<script src="/static/plugins/jQueryUI/sha256.js"></script>
+<script>
+    var pwd_const = 'ad5e38a3999d923fd852f834c4e4549652f61def3e48f6118cdab3a812615519';
     function flush_submit(){
-                window.location.reload();
+                $('#from_id')[0].reset();
             };
-    <!--function add_submit(){-->
-                <!--window.location.reload();-->
-            <!--};-->
-        <!--$.ajax({-->
-            <!--type: "POST",-->
-            <!--url:"/login/",-->
-            <!--dataType: "json",-->
-            <!--headers: {'X-CSRFtoken': $.cookie('csrftoken')},-->
-            <!--data:{-->
-                <!--"inputUsername3":$('#form-horizontal').find("input[name=inputUsername3]").val(),-->
-                <!--&lt;!&ndash;"pwd":$.sha256(pwd_const+$('#account_login').find("input[name=pwd]").val()),&ndash;&gt;-->
-            <!--},-->
-            <!--error: function(request) {-->
-                <!--alert("Connection error");-->
-            <!--},-->
-            <!--success: function(data) {-->
-                <!--var success = data.status;-->
-                <!--if (success) {-->
-                    <!--window.location="/login/home/";-->
-                <!--} else {-->
-                    <!--$("#msg-info").html(data.message).css('color', 'red');-->
-                    <!--$('#msg-info').show();-->
-                <!--}-->
-            <!--}-->
-        <!--});-->
-    <!--}-->
+    function add_submit(){
+        $.ajax({
+            type: "POST",
+            url:"/user/add/",
+            dataType: "json",
+            headers: {'X-CSRFtoken': $.cookie('csrftoken')},
+            data:{
+                "username":$('#from_id').find("input[name=inputUsername3]").val(),
+                "tel": $('#from_id').find("input[name=inputtel3]").val(),
+                "email": $('#from_id').find("input[name=inputEmail3]").val(),
+                "pwd": $.sha256(pwd_const+$('#from_id').find("input[name=inputPassword3]").val()),
+                "re_pwd": $.sha256(pwd_const+$('#from_id').find("input[name=retypePassword3]").val()),
+                "value": $('#from_id').find('select').val(),
+            },
+            error: function(request) {
+                alert("Connection error");
+            },
+            success: function(data) {
+                var success = data.status;
+                if (success) {
+                    window.location="/login/home/";
+                } else {
+                    $("#msg-info").html(data.message).css('color', 'red');
+                    $('#msg-info').show();
+                }
+            }
+        });
+    }
+</script>
+{% endblock %}
