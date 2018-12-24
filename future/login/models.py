@@ -12,6 +12,7 @@ class User(models.Model):
     name = models.CharField(max_length=123, unique=True)
     password = models.CharField(max_length=256)
     email = models.EmailField(unique=True)
+    tel = models.CharField(max_length=11, default=None)
     sex = models.CharField(max_length=32, choices=gender, default='男')
     create_time = models.DateTimeField(auto_now_add=True)
     G = models.ForeignKey(to_field='id', to="UserGroup", on_delete=models.CASCADE, default=1)

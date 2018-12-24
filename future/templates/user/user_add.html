@@ -3,41 +3,77 @@
 {% block content %}
         <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">用户注册管理界面</h3>
+                <h3 class="box-title"><b>用户注册管理界面</b></h3>
             </div>
             <!-- form start -->
             <form class="form-horizontal">
               <div class="box-body">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                  <div class="form-group">
+                      <label for="inputUsername3" class="col-sm-2 control-label">用户名</label>
+                      <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputUsername3" name="inputUsername3" placeholder="username">
+                      </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                  <div class="form-group">
+                      <label for="inputtel3" class="col-sm-2 control-label">电话</label>
+                      <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputtel3" placeholder="Telephone">
+                      </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> Remember me
-                      </label>
+                  <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                      <div class="col-sm-10">
+                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                      <div class="col-sm-10">
+                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="retypePassword3" class="col-sm-2 control-label">Retype Password</label>
+                    <div class="col-sm-10">
+                     <input type="password" class="form-control" id="retypePassword3" placeholder="Retype Password">
                     </div>
                   </div>
-                </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="submit" class="btn btn-default">取消</button>
-                <button type="submit" class="btn btn-info pull-right">提交</button>
+                <button  id="flush-submit" onclick="flush_submit()" class="btn btn-default">取消</button>
+                <button id="add-submit" onclick="add_submit()" class="btn btn-default pull-right">提交</button>
               </div>
               <!-- /.box-footer -->
             </form>
           </div>
 {% endblock %}
+    function flush_submit(){
+                window.location.reload();
+            };
+    <!--function add_submit(){-->
+                <!--window.location.reload();-->
+            <!--};-->
+        <!--$.ajax({-->
+            <!--type: "POST",-->
+            <!--url:"/login/",-->
+            <!--dataType: "json",-->
+            <!--headers: {'X-CSRFtoken': $.cookie('csrftoken')},-->
+            <!--data:{-->
+                <!--"inputUsername3":$('#form-horizontal').find("input[name=inputUsername3]").val(),-->
+                <!--&lt;!&ndash;"pwd":$.sha256(pwd_const+$('#account_login').find("input[name=pwd]").val()),&ndash;&gt;-->
+            <!--},-->
+            <!--error: function(request) {-->
+                <!--alert("Connection error");-->
+            <!--},-->
+            <!--success: function(data) {-->
+                <!--var success = data.status;-->
+                <!--if (success) {-->
+                    <!--window.location="/login/home/";-->
+                <!--} else {-->
+                    <!--$("#msg-info").html(data.message).css('color', 'red');-->
+                    <!--$('#msg-info').show();-->
+                <!--}-->
+            <!--}-->
+        <!--});-->
+    <!--}-->
