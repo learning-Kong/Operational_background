@@ -3,7 +3,7 @@ from future.login_certification import auth
 import json
 import re
 from login import models
-
+from . import paging
 
 # Create your views here.
 
@@ -47,4 +47,13 @@ def add(request):
 @auth
 def change(request):
     if request.method == "GET":
-        return render(request, 'user/user_change.html')
+        current_page = int(request.GET.get('p', 1)) #获取当前页码
+        num = models.User.objects.all().count() #数据库数据个数
+        per_page = 10    #每页显示个数
+        page_num = 7    #页数标签个数
+        page_obj = paging.Page(current_page, num, per_page, page_num)
+
+        pwd_db = models.User.objects.all()[page_obj.start():page_obj.end()]
+        page_str = page_obj.page_str()
+        print(page_str)
+        return render(request, 'user/user_change.html', {'pwd_db': pwd_db, 'page_str': page_str})
