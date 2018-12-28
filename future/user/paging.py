@@ -55,7 +55,7 @@ class Page:
         for i in range(int(start_index), int(end_index)):
             if i == self.current_page:
                 temp = '''
-                    <li class="paginate_button" active>
+                    <li class="paginate_button active">
                         <a href="/user/change/?p=%s" aria-controls="example2" data-dt-idx="0" tabindex="0">%s</a>
                     </li>
                 ''' % (i, i)
@@ -67,22 +67,22 @@ class Page:
                 ''' % (i, i)
             page_list.append(temp)
 
-            # 分情况处理下一页跳转情况
-            if self.current_page == self.total_count:
-                jump = '''
-                    <li class="paginate_button">
-                        <a href="javascript:void(0);" aria-controls="example2" data-dt-idx="0" tabindex="0">下一页</a>
-                    </li>
-                '''
-            else:
-                jump = '''
-                    <li class="paginate_button">
-                        <a href="/user/change/?p=%s;" aria-controls="example2" data-dt-idx="0" tabindex="0">上一页</a>
-                    </li>
-                ''' % (self.current_page + 1,)
-            page_list.append(jump)
+        # 分情况处理下一页跳转情况
+        if self.current_page == self.total_count:
+            jump = '''
+                <li class="paginate_button">
+                    <a href="javascript:void(0);" aria-controls="example2" data-dt-idx="0" tabindex="0">下一页</a>
+                </li>
+            '''
+        else:
+            jump = '''
+                <li class="paginate_button">
+                    <a href="/user/change/?p=%s;" aria-controls="example2" data-dt-idx="0" tabindex="0">下一页</a>
+                </li>
+            ''' % (self.current_page + 1,)
+        page_list.append(jump)
 
-            #设置为安全
-            page_str = mark_safe("".join(page_list))
+        #设置为安全
+        page_str = mark_safe("".join(page_list))
 
-            return page_str
+        return page_str
