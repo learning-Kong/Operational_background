@@ -3,7 +3,7 @@ from future.login_certification import auth
 import json
 import re
 from login import models
-from . import paging
+from future import paging
 
 # Create your views here.
 
