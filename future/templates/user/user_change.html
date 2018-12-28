@@ -20,7 +20,7 @@
                 </thead>
                 <tbody>
                 {% for info in pwd_db %}
-                    <tr>
+                    <tr hid="{{ info.name }}">
                         <td>{{ info.name }}</td>
                         <td>{{ info.G.department }}-{{ info.G.position }}</td>
                         <td>{{ info.tel }}</td>
@@ -29,7 +29,7 @@
                             <button type="button" class="btn btn-info">编辑</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-danger">删除</button>
+                            <button type="button" class="btn btn-danger" onclick="delfun()">删除</button>
                         </td>
                     </tr>
                 {% endfor %}
@@ -47,4 +47,37 @@
                 </div>
             </div>
         </div>
+{% endblock %}
+{% block script %}
+<script src="/static/plugins/jQueryUI/jquery.cookie.js"></script>
+<script>
+    function delfun(){
+        if (confirm('确认删除？'))
+        {
+            var username=$(this).parent().parent().attr('hid');
+            alert(username);
+            $.ajax({
+                type: "POST",
+                url: "/user/change/",
+                dataType: "json",
+                headers: {'X-CSRFtoken': $.cookie('csrftoken')},
+                data:{
+                    'username': $(this).parent().parent().find('name'),
+                },
+                error: function(request) {
+                    alert("Connection error");
+                },
+                success: function(data) {
+                    var success = data.status;
+                    if (success) {
+                        window.location="/login/home/";
+                } else {
+                    $("#msg-info").html(data.message).css('color', 'red');
+                    $('#msg-info').show();
+                }
+                }
+            });
+        }
+    }
+</script>
 {% endblock %}

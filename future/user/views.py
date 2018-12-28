@@ -56,4 +56,8 @@ def change(request):
         pwd_db = models.User.objects.filter()[page_obj.start():page_obj.end()]
         page_str = page_obj.page_str()
         return render(request, 'user/user_change.html', {'pwd_db': pwd_db, 'page_str': page_str})
-        # return render(request, 'user/user_change.html', {'page_str': page_str})
+    if request.method == "POST":
+        data = {'status': False, 'message': 'nice to meet you'}
+        username = request.POST.get('username')
+        print(username)
+        return HttpResponse(json.dumps(data))
