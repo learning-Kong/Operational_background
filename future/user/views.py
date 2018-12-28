@@ -53,16 +53,7 @@ def change(request):
         page_num = 7    #页数标签个数
 
         page_obj = paging.Page(current_page, num, per_page, page_num)
-
-        # pwd_db = models.User.objects.all()[page_obj.start():page_obj.end()]
-        # pwd_db = models.User.objects.filter()
-        User_name = 'kong'
         pwd_db = models.User.objects.filter()[page_obj.start():page_obj.end()]
-        pwd_de = models.User.objects.filter()
-        for i in pwd_db:
-            print(i.name)
         page_str = page_obj.page_str()
-        print(type(pwd_db))
-        print(type(pwd_de))
         return render(request, 'user/user_change.html', {'pwd_db': pwd_db, 'page_str': page_str})
         # return render(request, 'user/user_change.html', {'page_str': page_str})
