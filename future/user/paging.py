@@ -1,3 +1,5 @@
+#自定义分页模块
+
 from django.utils.safestring import mark_safe
 
 class Page:
