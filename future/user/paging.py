@@ -48,7 +48,7 @@ class Page:
         else:
             prev = '''
                 <li class="paginate_button">
-                    <a href="/user/change/?p=%s;" aria-controls="example2" data-dt-idx="0" tabindex="0">上一页</a>
+                    <a href="/user/change/?p=%s" aria-controls="example2" data-dt-idx="0" tabindex="0">上一页</a>
                 </li>
             ''' % (self.current_page - 1,)
         page_list.append(prev)
@@ -79,7 +79,7 @@ class Page:
         else:
             jump = '''
                 <li class="paginate_button">
-                    <a href="/user/change/?p=%s;" aria-controls="example2" data-dt-idx="0" tabindex="0">下一页</a>
+                    <a href="/user/change/?p=%s" aria-controls="example2" data-dt-idx="0" tabindex="0">下一页</a>
                 </li>
             ''' % (self.current_page + 1,)
         page_list.append(jump)

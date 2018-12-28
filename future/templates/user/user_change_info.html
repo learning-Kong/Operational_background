@@ -1,30 +1,30 @@
 {% extends 'base.html' %}
 {% block title %}用户添加{% endblock %}
 {% block content %}
-        <div class="box box-info">
+            <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title"><b>用户注册管理界面</b></h3>
+                <h3 class="box-title"><b>{{ user_info.name }}用户管理界面</b></h3>
             </div>
             <!-- form start -->
             <form class="form-horizontal" id="from_id">
               <div class="box-body">
                   <p id="msg-info" class="login-box-msg"></p>
-                  <div class="form-group">
+                  <div class="form-group hide">
                       <label for="inputUsername3" class="col-sm-2 control-label">用户名</label>
                       <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputUsername3" name="inputUsername3" placeholder="username">
+                          <input type="text" class="form-control" id="inputUsername3" name="inputUsername3" value="{{ user_info.name }}">
                       </div>
                   </div>
                   <div class="form-group">
                       <label for="inputtel3" class="col-sm-2 control-label">电话</label>
                       <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputtel3" name="inputtel3" placeholder="Telephone">
+                          <input type="text" class="form-control" id="inputtel3" name="inputtel3" value="{{ user_info.tel }}">
                       </div>
                   </div>
                   <div class="form-group">
                       <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                       <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail3" name="inputEmail3" placeholder="Email">
+                          <input type="email" class="form-control" id="inputEmail3" name="inputEmail3" value="{{ user_info.email}}">
                       </div>
                   </div>
                   <div class="form-group">
@@ -43,7 +43,8 @@
                       <label class="col-sm-2 control-label">人员分配</label>
                       <div class="col-sm-10">
                           <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                              {% for info in Groupinfo %}
+                              <option value="{{ user_info.G_id }}">{{ user_info.G.department }}-{{ user_info.G.position }}</option>
+                              {% for info in group_info %}
                                 <option value={{info.id}}>{{ info.department }}-{{ info.position }}</option>
                               {% endfor %}
                             </select>
@@ -74,7 +75,7 @@
             dataType: "json",
             headers: {'X-CSRFtoken': $.cookie('csrftoken')},
             data:{
-                "status": 'add',
+                "status": 'change',
                 "username":$('#from_id').find("input[name=inputUsername3]").val(),
                 "tel": $('#from_id').find("input[name=inputtel3]").val(),
                 "email": $('#from_id').find("input[name=inputEmail3]").val(),

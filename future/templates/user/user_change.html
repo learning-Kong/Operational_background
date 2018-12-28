@@ -20,16 +20,16 @@
                 </thead>
                 <tbody>
                 {% for info in pwd_db %}
-                    <tr hid="{{ info.name }}">
+                    <tr>
                         <td>{{ info.name }}</td>
                         <td>{{ info.G.department }}-{{ info.G.position }}</td>
                         <td>{{ info.tel }}</td>
-                        <td> {{ info.email }}</td>
+                        <td>{{ info.email }}</td>
                         <td>
-                            <button type="button" class="btn btn-info">编辑</button>
+                            <a href="/user/change_userinfo/?name={{ info.name }}"><button type="button" class="btn btn-info">编辑</button></a>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-danger" onclick="delfun()">删除</button>
+                            <button type="button" class="btn btn-danger" data-key='{{ info.name }}'>删除</button>
                         </td>
                     </tr>
                 {% endfor %}
@@ -51,33 +51,30 @@
 {% block script %}
 <script src="/static/plugins/jQueryUI/jquery.cookie.js"></script>
 <script>
-    function delfun(){
-        if (confirm('确认删除？'))
-        {
-            var username=$(this).parent().parent().attr('hid');
-            alert(username);
-            $.ajax({
-                type: "POST",
-                url: "/user/change/",
-                dataType: "json",
-                headers: {'X-CSRFtoken': $.cookie('csrftoken')},
-                data:{
-                    'username': $(this).parent().parent().find('name'),
-                },
-                error: function(request) {
-                    alert("Connection error");
-                },
-                success: function(data) {
-                    var success = data.status;
-                    if (success) {
-                        window.location="/login/home/";
-                } else {
-                    $("#msg-info").html(data.message).css('color', 'red');
-                    $('#msg-info').show();
-                }
-                }
+    $(function(){
+        $('.btn-danger').click(function(){
+            if(confirm('确认删除？'))
+            {
+                var key=$(this).attr('data-key');
+                $.ajax({
+                    type: "POST",
+                    url: "/user/change/",
+                    dataType: "json",
+                    headers: {'X-CSRFtoken': $.cookie('csrftoken')},
+                    data:{
+                        'username': key,
+                    },
+                    success: function(data) {
+                        var success = data.status;
+                        if (success) {
+                            window.location.reload();
+                    } else {
+                        alert('请求错误');
+                    }
+                    }
+                });
+            }
             });
-        }
-    }
+    })
 </script>
 {% endblock %}

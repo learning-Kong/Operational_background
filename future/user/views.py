@@ -21,14 +21,21 @@ def add(request):
         User_password = request.POST.get('pwd')
         User_re_password = request.POST.get('re_pwd')
         Gid = request.POST.get('value')
+        status = request.POST.get('status')
         pwd_db = models.User.objects.filter(name=User_name).first()
-        if not pwd_db:
+        if not pwd_db or status == "change":
             if User_name != '':
                 if re.fullmatch(r"1\d{10}", User_tel):
                     if re.match(r'^[0-9a-zA-Z_]{0,19}@[0-9a-zA-Z]{1,13}\.[com,cn,net]{1,3}$', User_email):
                         if User_password == User_re_password:
                             if User_password != pwd_null:
-                                models.User.objects.create(name=User_name, password=User_password, email=User_email, tel=User_tel, G_id = Gid)
+                                if status == "add":
+                                    models.User.objects.create(name=User_name, password=User_password, email=User_email, tel=User_tel, G_id=Gid)
+                                if status == "change":
+                                    models.User.objects.filter(name=User_name).update(password=User_password, email=User_email, tel=User_tel, G_id=Gid)
+                                data['status'] = True
+                            elif status == "change":
+                                models.User.objects.filter(name=User_name).update(email=User_email, tel=User_tel, G_id=Gid)
                                 data['status'] = True
                             else:
                                 data['message'] = '密码不能为空'
@@ -57,7 +64,20 @@ def change(request):
         page_str = page_obj.page_str()
         return render(request, 'user/user_change.html', {'pwd_db': pwd_db, 'page_str': page_str})
     if request.method == "POST":
-        data = {'status': False, 'message': 'nice to meet you'}
+        data = {'status': True, 'message': 'nice to meet you'}
         username = request.POST.get('username')
-        print(username)
+        models.User.objects.filter(name=username).delete()
         return HttpResponse(json.dumps(data))
+
+@auth
+def change_userinfo(request):
+    if request.method == "GET":
+        try:
+            username = request.GET.get('name')
+            print(username)
+            user_info = models.User.objects.filter(name=username).first()
+            group_info = models.UserGroup.objects.all()
+            return render(request, 'user/user_change_info.html', {'user_info': user_info, 'group_info': group_info})
+        except Exception as e:
+            print(e)
+            return HttpResponse('非法访问')
