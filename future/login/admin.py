@@ -6,7 +6,7 @@ from .models import UserGroup
 
 class UserGroupAdmin(admin.ModelAdmin):
     list_display = ("department", "position", "permission")
-    list_per_page = 4
+    list_per_page = 5
     ordering = ("-department", "permission", "position")
 
 admin.site.register(UserGroup, UserGroupAdmin)
