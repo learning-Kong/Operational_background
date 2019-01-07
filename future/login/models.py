@@ -3,8 +3,16 @@ from django.db import models
 # Create your models here.
 
 class UserGroup(models.Model):
-    department = models.CharField(max_length=256)
-    position = models.CharField(max_length=256)
+    department = models.CharField(max_length=256, verbose_name='部门')
+    position = models.CharField(max_length=256, verbose_name='职位')
+    permission = models.IntegerField(default=2, verbose_name='权限')
+
+    def __str__(self):
+        return u'%s %s %d' % (self.department, self.position, self.permission)
+
+    class Meta:  # 定义表名
+        verbose_name = '人员管理'
+        verbose_name_plural = '人员管理'
 
 class User(models.Model):
     gender = (('male', '男'), ('female', '女'))
