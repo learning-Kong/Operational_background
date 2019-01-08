@@ -113,18 +113,38 @@
       <!-- /.查询框 -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header "><b>MAIN NAVIGATION</b></li>
-        <li class="active treeview">
+        <li class="header "><b>主导航</b></li>
+        <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>资产管理</span>
+            <i class="fa fa-share"></i> <span>资产管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="/assets/entry/"><i class="fa fa-circle-o"></i> 资产录入</a></li>
-            <li><a href="/assets/project/"><i class="fa fa-circle-o"></i> 项目管理</a></li>
-            <li><a href="/assets/list/"><i class="fa fa-circle-o"></i> 机器管理</a></li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-circle-o"></i>服务器管理
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/assets/list/"><i class="fa fa-circle-o"></i>服务器列表</a></li>
+                <li><a href="/assets/entry/"><i class="fa fa-circle-o"></i>资产录入</a> </li>
+                <li><a href="/assets/list/"><i class="fa fa-circle-o"></i> 机器管理</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-circle-o"></i>项目管理
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/assets/entry/"><i class="fa fa-circle-o"></i>项目列表</a></li>
+                <li><a href="/assets/entry/"><i class="fa fa-circle-o"></i>添加项目</a> </li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li class="treeview">
@@ -183,6 +203,7 @@
             <li><a href="/user/change/"><i class="fa fa-circle-o"></i>权限修改</a></li>
           </ul>
         </li>
+
       </ul>
     </section>
     <!-- /.sidebar -->

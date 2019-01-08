@@ -25,4 +25,5 @@ urlpatterns = [
     path('login/', include('login.urls')),
     path('favicon.ico', serve, {'path': 'img/favicon.ico'}),
     path('user/', include('user.urls')),
+    path('assets/', include('assets.urls')),
 ]
