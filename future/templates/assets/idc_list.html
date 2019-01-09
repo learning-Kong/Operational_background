@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}项目添加{% endblock %}
+{% block content %}
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title"><b>追梦</b>-项目管理</h3>
+            </div>
+            <!--表头-->
+            <div class="box float-e-margins">
+                <div class="box-header with-border">
+                    <h3 class="box-title">添加IDC机房 | Add IDC</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>机房名称</th>
+                    <th>机房地址</th>
+                    <th>运营商</th>
+                    <th>机房类型</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for info in idc_info %}
+                    <tr>
+                        <td>{{ info.name }}</td>
+                        <td>{{ info.address }}</td>
+                        <td>{{ info.get_operator_display }}</td>
+                        <td>{{ info.get_type_display }}</td>
+                        <td>{{ info.comment }}</td>
+                        <td>
+                            <a href="/user/change_userinfo/?name={{ info.name }}"><button type="button" class="btn btn-info">编辑</button></a>
+                            <button type="button" class="btn btn-danger" data-key='{{ info.name }}'>删除</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-sm-7">
+                <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                    <ul class="pagination pull-right">
+                        {{ page_str }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        </div>
+{% endblock %}
+{% block script %}
+{% endblock %}
