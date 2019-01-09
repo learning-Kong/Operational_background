@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}项目添加{% endblock %}
+{% block content %}
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title"><b>追梦</b>-项目管理</h3>
+            </div>
+            <!--表头-->
+            <div class="box float-e-margins">
+                <div class="box-header with-border">
+                    <h3 class="box-title">添加IDC机房 | Add IDC</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <form class="form-horizontal" id="from_id" action="/assets/idc_list/" method="post">
+                        {% csrf_token %}
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">{{ idc_form.idc_name.label_tag }}</label>
+                                <div class="col-sm-10">
+                                    {{ idc_form.idc_name }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">{{ idc_form.idc_area.label_tag }}</label>
+                                <div class="col-sm-10">
+                                    {{ idc_form.idc_area }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">{{ idc_form.idc_operator.label_tag }}</label>
+                                <div class="col-sm-10">
+                                    {{ idc_form.idc_operator }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">{{ idc_form.idc_type.label_tag }}</label>
+                                <div class="col-sm-10 col-lg-10">
+                                    {{ idc_form.idc_type }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">{{ idc_form.idc_comment.label_tag }}</label>
+                                <div class="col-sm-10 col-lg-10">
+                                    {{idc_form.idc_comment}}
+                                </div>
+                            </div>
+                        </div>
+                  <!-- /.box-body -->
+                        <div class="box-footer">
+                            <button type="button" onclick="flush_submit()" class="btn btn-default">取消</button>
+                            <button type="submit" class="btn btn-info pull-right">提交</button>
+                        </div>
+                  <!-- /.box-footer -->
+                    </form>
+                </div>
+            </div>
+
+        </div>
+{% endblock %}
+{% block script %}
+<script>
+    function flush_submit(){
+                $('#from_id')[0].reset();
+            };
+</script>
+{% endblock %}
