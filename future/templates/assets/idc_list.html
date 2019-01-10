@@ -35,8 +35,8 @@
                         <td>{{ info.get_type_display }}</td>
                         <td>{{ info.comment }}</td>
                         <td>
-                            <a href="/user/change_userinfo/?name={{ info.name }}"><button type="button" class="btn btn-info">编辑</button></a>
-                            <button type="button" class="btn btn-danger" data-key='{{ info.name }}'>删除</button>
+                            <a href="/assets/idc_change/?idc_id={{ info.id }}"><button type="button" class="btn btn-info">编辑</button></a>
+                            <a href="/assets/idc_del/?idc_id={{ info.id }}"><button type="button" class="btn btn-danger">删除</button></a>
                         </td>
                     </tr>
                 {% endfor %}
@@ -55,6 +55,4 @@
         </div>
 
         </div>
-{% endblock %}
-{% block script %}
 {% endblock %}
