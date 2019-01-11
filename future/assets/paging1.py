@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+# author: "Xianglei Kong"
 
 #url 参数改进版试用性更强
 from django.utils.safestring import mark_safe

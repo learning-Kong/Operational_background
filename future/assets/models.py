@@ -1,3 +1,6 @@
+# -*- coding:utf-8 -*-
+# author: "Xianglei Kong"
+
 from django.db import models
 
 # Create your models here.

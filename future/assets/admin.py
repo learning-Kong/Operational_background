@@ -1,3 +1,6 @@
+# -*- coding:utf-8 -*-
+# author: "Xianglei Kong"
+
 from django.contrib import admin
 from .models import IDC, Project
 # Register your models here.

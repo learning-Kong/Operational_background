@@ -1,3 +1,6 @@
+# -*- coding:utf-8 -*-
+# author: "Xianglei Kong"
+
 from django import forms
 from .models import idc_operator, idc_type, use_type
 

@@ -1,3 +1,7 @@
+# -*- coding:utf-8 -*-
+# author: "Xianglei Kong"
+
+
 from django.urls import path
 from . import views
 
