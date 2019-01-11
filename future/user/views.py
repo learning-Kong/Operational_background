@@ -1,4 +1,6 @@
-# coding:utf-8
+# -*- coding:utf-8 -*-
+# author: "Xianglei Kong"
+
 from django.shortcuts import render, HttpResponse
 from future.login_certification import auth
 import json

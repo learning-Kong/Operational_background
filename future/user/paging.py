@@ -1,3 +1,6 @@
+# -*- coding:utf-8 -*-
+# author: "Xianglei Kong"
+
 #自定义分页模块
 
 from django.utils.safestring import mark_safe
