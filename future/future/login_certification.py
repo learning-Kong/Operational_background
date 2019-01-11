@@ -1,3 +1,6 @@
+# -*- coding:utf-8 -*-
+# author: "Xianglei Kong"
+
 #用户登录验证装饰器
 
 from django.shortcuts import redirect

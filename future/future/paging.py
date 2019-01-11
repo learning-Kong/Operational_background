@@ -1,3 +1,6 @@
+# -*- coding:utf-8 -*-
+# author: "Xianglei Kong"
+
 from django.utils.safestring import mark_safe
 
 class Page:
