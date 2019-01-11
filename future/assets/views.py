@@ -7,6 +7,7 @@ from . import models
 from .form import IDC_form, Project_form
 from . import paging, paging1
 from django.db import IntegrityError
+
 # Create your views here.
 @auth
 def idc_add(request):
