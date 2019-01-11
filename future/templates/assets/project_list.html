@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}IDC列表{% endblock %}
+{% block title %}项目添加{% endblock %}
 {% block content %}
         <div class="box box-info">
             <div class="box-header with-border">
@@ -8,7 +8,7 @@
             <!--表头-->
             <div class="box float-e-margins">
                 <div class="box-header with-border">
-                    <h3 class="box-title">IDC列表| Add IDC</h3>
+                    <h3 class="box-title">添加IDC机房 | Add PROJECT</h3>
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
@@ -18,25 +18,27 @@
                     <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th>机房名称</th>
-                    <th>机房地址</th>
-                    <th>运营商</th>
-                    <th>机房类型</th>
+                    <th>项目名称</th>
+                    <th>项目简称</th>
+                    <th>业务名称</th>
+                    <th>业务简称</th>
+                    <th>业务用途</th>
                     <th>备注</th>
                     <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for info in idc_info %}
+                {% for info in project_info %}
                     <tr>
-                        <td>{{ info.name }}</td>
-                        <td>{{ info.address }}</td>
-                        <td>{{ info.get_operator_display }}</td>
-                        <td>{{ info.get_type_display }}</td>
+                        <td>{{ info.project_name }}</td>
+                        <td>{{ info.aliases_name }}</td>
+                        <td>{{ info.business_name }}</td>
+                        <td>{{ info.business_aliases_name }}</td>
+                        <td>{{ info.get_use_name_display }}</td>
                         <td>{{ info.comment }}</td>
                         <td>
-                            <a href="/assets/idc_change/?idc_id={{ info.id }}&status=1"><button type="button" class="btn btn-info">编辑</button></a>
-                            <a href="/assets/idc_del/?idc_id={{ info.id }}&status=1"><button type="button" class="btn btn-danger">删除</button></a>
+                            <a href="/assets/project/change/?project_id={{ info.id }}&status=2"><button type="button" class="btn btn-info">编辑</button></a>
+                            <a href="/assets/project/del/?project_id={{ info.id }}&status=2"><button type="button" class="btn btn-danger">删除</button></a>
                         </td>
                     </tr>
                 {% endfor %}
