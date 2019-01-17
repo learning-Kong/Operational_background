@@ -53,3 +53,38 @@ class Project(models.Model):
         verbose_name = u"项目管理"
         verbose_name_plural = verbose_name
         app_label = 'assets'
+
+SERVER_STATUS = (
+    (0, "系统未安装"),
+    (1, "已初始化"),
+    (2, "正在运行"),
+    (3, "下架")
+)
+
+BOOL_CHOICES = (
+    (True, "使用中"),
+    (False, "空闲")
+)
+
+SYSTEM_CHOICES = (
+    (0, "CentOS"),
+    (1, "Windows"),
+    (2, "Ubuntu"),
+)
+
+class Host(models.Model):
+    host_name = models.CharField(max_length=64, blank=True, null=True, verbose_name="主机名")
+    idc = models.ForeignKey(IDC, blank=True, null=True, verbose_name="机房", on_delete=models.SET_NULL)
+    eth1 = models.GenericIPAddressField(protocol="IPV4", null=True, verbose_name="IP地址", unique=True)
+    eth2 = models.GenericIPAddressField(blank=True, null=True, verbose_name="IP地址2", default='null', unique=True)
+    cpu = models.CharField(max_length=64, blank=True, null=True, verbose_name='CPU')
+    memory = models.CharField(max_length=64, blank=True, null=True, verbose_name="内存")
+    hard_disk = models.CharField(max_length=64, blank=True, null=True, verbose_name='硬盘')
+    system = models.IntegerField(choices=SYSTEM_CHOICES, default=0, blank=True, null=True, verbose_name="系统类型")
+    system_version = models.CharField(max_length=64, blank=True, null=True, verbose_name="版本号")
+    create_time = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+    end_time = models.DateTimeField(blank=True, null=True, verbose_name="结束时间")
+    business = models.ForeignKey(Project, blank=True, null=True, verbose_name="所属业务", on_delete=models.SET_NULL)
+    status = models.IntegerField(verbose_name="机器状态", choices=SERVER_STATUS, default=0, blank=True)
+    idle = models.BooleanField(verbose_name="状态", choices=BOOL_CHOICES, default=False)
+    editor = models.TextField(blank=True, null=True, verbose_name="备注")

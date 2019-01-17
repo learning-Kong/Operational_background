@@ -5,7 +5,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from future.login_certification import auth
 from . import models
-from .form import IDC_form, Project_form
+from .form import IDC_form, Project_form, Host_from
 from . import paging, paging1
 from django.db import IntegrityError
 
@@ -135,3 +135,34 @@ def project_del(request):
             print('准备删除主机')
             models.Project.objects.filter(id=project_id).delete()
             return redirect('/assets/project/list/')
+
+@auth
+def host_add(request):
+    if request.method == "GET":
+        host_form = Host_from()
+        return render(request, "assets/host_add.html", {"host_form": host_form})
+    if request.method == "POST":
+        obj = Host_from(request.POST)
+        if not obj.is_valid():
+            print(obj.is_valid())
+            print(obj.errors)
+            return render(request, 'assets/host_add.html', {'host_form': obj})
+        else:
+            obj.save()
+            return HttpResponse(123)
+
+@auth
+def host_list(request):
+    if request.method == "GET":
+        current_page = int(request.GET.get('p', 1))  # 获取当前页码
+        num = models.Host.objects.all().count()  # 数据库数据个数
+        url = "/assets/host/list/"
+        per_page = 3  # 每页显示个数
+        page_num = 7  # 页数标签个数
+        page_obj = paging1.Page(current_page, num, per_page, page_num, url)
+        host_info = models.Host.objects.filter()[page_obj.start():page_obj.end()]
+        print(host_info)
+        for i in host_info:
+            print(i.host_name)
+        page_str = page_obj.page_str()
+        return render(request, "assets/host_list.html", {'host_info': host_info, 'page_str': page_str})

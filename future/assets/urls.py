@@ -15,4 +15,6 @@ urlpatterns = [
     path('project/list/', views.project_list),
     path('project/change/', views.project_edit),
     path('project/del/', views.project_del),
+    path('host/add/', views.host_add),
+    path('host/list/', views.host_list),
 ]
