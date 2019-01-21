@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script type="text/javascript"  src="/static/chart.js"></script>
+    <script type="text/javascript"  src="/static/jquery.js"></script>
 </head>
 <body>
+<button id="button">加载图表</button>
 <div style="width:400px;height:400px"><canvas id="myChart" width="200" height="200"></canvas></div>
 
 </body>
 <script>
+var xmlhttp=new XMLHttpRequest();
+xmlhttp.open("GET","display/chart/",true)
+xmlhttp.send();
+
+
 var ctx = document.getElementById('myChart').getContext('2d');
+$(document).ready(function(){
+    $("#button").click(function(){
+        $.get("/display/chart/","",
+            function(data1,status){$("#myChart").innerHTML=data1;
+            console.log(data1)
+            }
+        );
+    });
+});
 var myLineChart = new Chart(ctx, {
     type: 'line',
     data:{
