@@ -26,8 +26,8 @@ def login(request):
         return HttpResponse(r.text)
 def chartdisplay(request):
     t = int(time.time())
-    params= {"step": 60,"start_time": 1536112805,"hostnames": ["localhost.localdomain"],"end_time": 1536212905,"counters": ["cpu.idle"],"consol_fun": "AVERAGE"}
-    head = {'Apitoken':json.dumps({"name":"root","sig":"e55a622decc811e8aef5000c2913d5c4"}),'X-Forwarded-For':'192.168.1.190',"Content-Type": "application/json"}
+    params= {"step": 60,"start_time": 1548112805,"hostnames": ["localhost.localdomain"],"end_time": 1548124805,"counters": ["cpu.idle"],"consol_fun": "AVERAGE"}
+    head = {'Apitoken':json.dumps({"name":"root","sig":"13953a520ff211e9917686bf05b23eb4"}),'X-Forwarded-For':'192.168.15.156',"Content-Type": "application/json"}
     print('\n','aaaaaaaaaaaa')
     r = requests.post("%s/graph/history" % (config.API_ADDR), data=json.dumps(params), headers=head)
     a=r.json()
@@ -56,3 +56,6 @@ def chartdisplay(request):
     return HttpResponse(json.dumps(a))
 def chartss(request):
     return render(request, 'display/chart test.html')
+
+def ajaxchart(request):
+    return render(request, 'display/ajax.html')

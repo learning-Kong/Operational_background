@@ -7,4 +7,5 @@ urlpatterns = [
     path('login/',views.login),
     path('chart/',views.chartdisplay),
     path('charttest/',views.chartss),
+    path('ajax/',views.ajaxchart),
 ]
