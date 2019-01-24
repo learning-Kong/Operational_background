@@ -7,33 +7,84 @@
     <script type="text/javascript"  src="/static/jquery.js"></script>
 </head>
 <body>
-<button id="button">加载图表</button>
-<div style="width:400px;height:400px"><canvas id="myChart" width="200" height="200"></canvas></div>
-
+<button id="button1">加载图表</button>
+<div id="id1"style="width:400px;height:400px"><canvas id="myChart" width="200" height="200"></canvas></div>
+<div id="id2"style="width:500px;height:500px"><canvas id="myChart2" width="200" height="200"></canvas></div>
 </body>
 <script>
-var xmlhttp=new XMLHttpRequest();
-xmlhttp.open("GET","display/chart/",true)
-xmlhttp.send();
 
-
-var ctx = document.getElementById('myChart').getContext('2d');
 $(document).ready(function(){
-    $("#button").click(function(){
-        $.get("/display/chart/","",
-            function(data1,status){$("#myChart").innerHTML=data1;
-            console.log(data1)
-            }
-        );
+    $("#button1").click(function(){
+        $.ajax({url:"/display/chart/",success:function(data1){
+            var result =eval(data1)
+            console.log(result[0]["Values"][0]["value"]);
+            //$("#text1").text(result[0]["Values"][0]["timestamp"]);
+            console.log(data1);
+            labels1=new Array()
+            data2=new Array()
+            tt=new Array()
+            for (i in result[0]["Values"]){
+                labels1.push(result[0]["Values"][i]["timestamp"]);
+                console.log(result[0]["counter"])
+                data2.push(result[0]["Values"][i]["value"]);
+                tt.push({x:result[0]["Values"][i]["timestamp"],y:result[0]["Values"][i]["value"]})
+                }
+            console.log(data2,labels1,tt)
+            var ctx = document.getElementById('myChart2').getContext('2d');
+            var myLineChart = new Chart(ctx, {
+            type: 'line',
+            data:{
+            labels: labels1,
+            datasets:  [{
+            label: result[0]["counter"],
+            data:  tt,
+            borderWidth:3,
+            borderColor:'rgba(0,0,255,0.5)',
+            borderJoinStyle:'bevel',
+            pointBackgroundColor:'rgba(0,0,255,0.5)',
+            pointBorderColor:'rgba(0,0,255,0.5)',
+            pointRotation:0,
+            showLines: true,
+            tension:0,
+            fill: false,
+
+            }]
+         },
+    options: {
+        title: {
+            display:true,
+            text: result[0]["endpoint"]
+            },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    max: 100,
+                    min: 0,
+                    stepSize: 20
+                    },
+                    gridLines:{
+                drawBorder:false,lineWidth:1,
+                    },
+                }],
+
+            },
+            scaleShowGridLines : false,
+        },
+});
+
+
+
+            }});
     });
 });
+var ctx = document.getElementById('myChart').getContext('2d');
 var myLineChart = new Chart(ctx, {
     type: 'line',
     data:{
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: ["January", "February", "March", "April", "May", "June", "July","80","90", "April", "May", "June", "July","80","90","80","90", "April", "May", "June", "July","80","90","80","90", "April", "May", "June", "July","80","90"],
         datasets:  [{
             label: 'this is a test',
-            data:  [NaN,10,20,30,10],
+            data:  [NaN,10,20,30,10,80,90,10,20,30,10,80,90,10,20,30,10,80,90,10,20,30,10,80,90,10,20,30,10,80,90],
             borderWidth:3,
             borderColor:'rgba(0,0,255,0.5)',
             borderJoinStyle:'bevel',
