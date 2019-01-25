@@ -10,6 +10,7 @@
 <button id="button1">加载图表</button>
 <div id="id1"style="width:400px;height:400px"><canvas id="myChart" width="200" height="200"></canvas></div>
 <div id="id2"style="width:500px;height:500px"><canvas id="myChart2" width="200" height="200"></canvas></div>
+<div id="id3"style="width:500px;height:500px"><canvas id="myChart3" width="200" height="200"></canvas></div>
 </body>
 <script>
 
@@ -38,7 +39,7 @@ $(document).ready(function(){
             datasets:  [{
             label: result[0]["counter"],
             data:  tt,
-            borderWidth:3,
+            borderWidth:1,
             borderColor:'rgba(0,0,255,0.5)',
             borderJoinStyle:'bevel',
             pointBackgroundColor:'rgba(0,0,255,0.5)',
@@ -47,10 +48,11 @@ $(document).ready(function(){
             showLines: true,
             tension:0,
             fill: false,
-
+            scaleOverlay : true,
             }]
          },
     options: {
+    scaleOverlay : true,
         title: {
             display:true,
             text: result[0]["endpoint"]
@@ -69,7 +71,10 @@ $(document).ready(function(){
 
             },
             scaleShowGridLines : false,
+
         },
+        scaleShowGridLines : false,
+        scaleOverlay : true,
 });
 
 
@@ -85,7 +90,7 @@ var myLineChart = new Chart(ctx, {
         datasets:  [{
             label: 'this is a test',
             data:  [NaN,10,20,30,10,80,90,10,20,30,10,80,90,10,20,30,10,80,90,10,20,30,10,80,90,10,20,30,10,80,90],
-            borderWidth:3,
+            borderWidth:1,
             borderColor:'rgba(0,0,255,0.5)',
             borderJoinStyle:'bevel',
             pointBackgroundColor:'rgba(0,0,255,0.5)',
@@ -102,6 +107,36 @@ var myLineChart = new Chart(ctx, {
             text: 'Custom Chart Title'
         }
     }
+});
+$(document).ready(function(){
+    $("#button2").click(function(){
+        $.ajax({url:"/display/chart/",success:function(data1){
+            var result =eval(data1)
+            console.log(result[0]["Values"][0]["value"]);
+            //$("#text1").text(result[0]["Values"][0]["timestamp"]);
+            console.log(data1);
+            labels1=new Array()
+            data2=new Array()
+            tt=new Array()
+            for (i in result[0]["Values"]){
+                labels1.push(result[0]["Values"][i]["timestamp"]);
+                console.log(result[0]["counter"])
+                data2.push(result[0]["Values"][i]["value"]);
+                tt.push({x:result[0]["Values"][i]["timestamp"],y:result[0]["Values"][i]["value"]})
+                }
+            console.log(data2,labels1,tt)
+            var ctx = document.getElementById('myChart3').getContext('2d');
+            var myLineChart = new Chart(ctx,);
+            var data={
+        labels: labels1,
+        datasets:  [{
+            label: result[0]["counter"],
+            data:  data2,
+            }]
+         },
+
+            }});
+    });
 });
 </script>
 </html>
