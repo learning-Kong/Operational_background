@@ -9,14 +9,13 @@
 </head>
 <body>
 <button id="button1">加载图表</button>
-<div id="id3"style="width:500px;height:500px"><canvas id="myChart3" width="200" height="200"><h3 id="hh33"></h3></canvas></div>
+<div id="id3"><h3 id="hh33"></h3></canvas></div>
 </body>
 <script>
 
 $(document).ready(function(){
     $("#button1").click(function(){
         $.ajax({url:"/display/chart/",success:function(data1){
-
             var result =eval(data1)
             console.log(result[0]["Values"][0]["value"]);
             //$("#text1").text(result[0]["Values"][0]["timestamp"]);
@@ -37,7 +36,7 @@ $(document).ready(function(){
 
       var chart = new G2.Chart({
         id: 'id3',
-        width : 600,
+        width : 700,
         height : 300
       });
       // Step 2: 载入数据源,定义列信息
@@ -53,9 +52,18 @@ $(document).ready(function(){
           max: 100,
         }
       });
-        chart.axis('timestamp', {
-        title: null // 不展示 xField 对应坐标轴的标题
-        });
+      chart.axis('timestamp', {
+        title: null, // 不展示 xField 对应坐标轴的标题
+        grid: {
+    type: 'line',
+    lineStyle: {
+      stroke: '#d9d9d9',
+      lineWidth: 1,
+      lineDash: [ 4, 4 ]
+    },
+    align: 'center' // 网格顶点从两个刻度中间开始
+  }
+          });
       chart.line().position('timestamp*value');
       chart.render();
 
