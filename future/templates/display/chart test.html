@@ -9,35 +9,37 @@
 </head>
 <body>
 <button id="button1">加载图表</button>
-<div id="id3"><h3 id="hh33"></h3></canvas></div>
+<div id="id3"><p><font id="hh33"></font><font id="hh22"></font></p></div>
 </body>
 <script>
 
 $(document).ready(function(){
-    $("#button1").click(function(){
+
         $.ajax({url:"/display/chart/",success:function(data1){
             var result =eval(data1)
             console.log(result[0]["Values"][0]["value"]);
             //$("#text1").text(result[0]["Values"][0]["timestamp"]);
             console.log(data1);
+            console.log(number=result[0]["Values"].length)
             labels1=new Array()
             data2=new Array()
             tt=new Array()
             data3=new Array()
             for (i in result[0]["Values"]){
-                labels1.push(result[0]["Values"][i]["timestamp"]);
+                labels1.push(result[0]["Values"][i]["timestamp"]*1000);
                 data2.push(result[0]["Values"][i]["value"]);
-                tt.push({x:result[0]["Values"][i]["timestamp"],y:result[0]["Values"][i]["value"]})
+                tt.push({x:result[0]["Values"][i]["timestamp"]*1000,y:result[0]["Values"][i]["value"]})
                 console.log(result[0]["Values"][i]["timestamp"]*1000)
                 result[0]["Values"][i]["timestamp"]=result[0]["Values"][i]["timestamp"]*1000
                 }
             console.log(data2,labels1,tt)
-            $("#hh33").text("aaaa")
+            $("#hh33").text(result[0]["counter"])
+
 
       var chart = new G2.Chart({
         id: 'id3',
         width : 700,
-        height : 300
+        height : 400
       });
       // Step 2: 载入数据源,定义列信息
       console.log(result[0]["Values"])
@@ -45,6 +47,9 @@ $(document).ready(function(){
         timestamp: {
             type: 'time',
             mask:'yyyy-mm-dd \n HH:mm:ss',
+            //ticks:labels1,
+            //tickInterval:1000,
+            tickCount:10,
         },
         value: {
           alias: '占用率',
@@ -52,24 +57,25 @@ $(document).ready(function(){
           max: 100,
         }
       });
+      chart.legend({
+      selectedMode: 'single',
+      position: 'bottom', // 设置图例的显示位置
+      });
       chart.axis('timestamp', {
         title: null, // 不展示 xField 对应坐标轴的标题
-        grid: {
-    type: 'line',
-    lineStyle: {
-      stroke: '#d9d9d9',
-      lineWidth: 1,
-      lineDash: [ 4, 4 ]
-    },
-    align: 'center' // 网格顶点从两个刻度中间开始
-  }
           });
       chart.line().position('timestamp*value');
       chart.render();
 
             }});
-    });
+//$("#button1").click(function(){
+    //$.ajax({url:"/display/chart/",success:function(data1){
+        //}
+    //});
+
+// });
 });
+
 
 </script>
 </html>
