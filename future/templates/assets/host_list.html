@@ -13,35 +13,114 @@
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
                     </div>
+                    <h5> 主机详细信息列表 <span style="color:red">总共有:{{ host_num }}台  物理机:{{ physics }}  云主机: {{ vms }}台</span></h5>
                 </div>
                 <div class="box-body">
-                    <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                    <th>服务器名</th>
-                    <th>IP地址</th>
-                    <th>运营商</th>
-                    <th>机房类型</th>
-                    <th>备注</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for info in host_info %}
-                    <tr>
-                        <td>{{ info.host_name }}</td>
-                        <td>{{ info.address }}</td>
-                        <td>{{ info.get_operator_display }}</td>
-                        <td>{{ info.get_type_display }}</td>
-                        <td>{{ info.comment }}</td>
-                        <td>
-                            <a href="/assets/idc_change/?idc_id={{ info.id }}&status=1"><button type="button" class="btn btn-info">编辑</button></a>
-                            <a href="/assets/idc_del/?idc_id={{ info.id }}&status=1"><button type="button" class="btn btn-danger">删除</button></a>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-              </table>
+                    <form id="asset_form">
+                        {% csrf_token %}
+                        <div class="col-sm-1 test_width" style="width: 140px">
+                            <label>
+                                <select name="change_idc" class="form-control m-b" onchange="change_info()" style="width: 110px">
+                                    <option value="">所有机房</option>
+                                    {% for i in idcs %}
+                                        <option value="{{i.name}}"> {{ i }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col-sm-1 test_width" style="width: 140px">
+                            <label>
+                                <select name="change_business" class="form-control m-b" onchange="change_info()" style="width: 110px">
+                                    <option value="all">所有项目</option>
+                                    {% for i in server_type %}
+                                    <option value="{{i.service_name}}"> {{ i }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col-sm-1 test_width" style="width: 140px">
+                            <label>
+                                <select name="change_service" class="form-control m-b" onchange="change_info()" style="width: 110px">
+                                    <option value="all">所有服务</option>
+                                    {% for i in services %}
+                                    <option value="{{i.name}}"> {{ i }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                        </div>
+                         <div class="col-sm-1 test_width" style="width: 140px">
+                             <label>
+                                 <select name="change_status" class="form-control m-b" onchange="change_info()" style="width: 110px">
+                                     <option value="">所有状态</option>
+                                     {% for i in server_status %}
+                                     <option value="{{ i.0 }}"> {{ i.1 }}</option>
+                                     {% endfor %}
+                                 </select>
+                             </label>
+                         </div>
+                        <div class="col-sm-1 test_width" style="width: 140px">
+                            <label>
+                                <select name="change_brand" class="form-control m-b" onchange="change_info()" style="width: 110px" >
+                                    <option value="">所有型号</option>
+                                    {% for i in brands %}
+                                    <option value="{{ i.0 }}"> {{ i.1 }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                        </div>
+                        <div class="col-sm-1 test_width" style="width: 140px">
+                            <label>
+                                <select name="change_type" class="form-control m-b" onchange="change_info()" style="width: 110px">
+                                    <option value="">所有类型</option>
+                                    <option value="1">物理机</option>
+                                    <option value="0">虚拟机</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div id="replace">
+                            <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"><input type="checkbox" id="select_all" onclick="check_all('asset_form')"></th>
+                                    <th>服务器名</th>
+                                    <th>IP地址</th>
+                                    <th>IDC</th>
+                                    <th>项目</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for info in host_info %}
+                                <tr class="gradeX">
+                                    <td class="text-center"><input type="checkbox" name="selected" value="{{ info.id }}"></td>
+                                    <td>{{ info.host_name }}</td>
+                                    <td>{{ info.address }}</td>
+                                    <td>{{ info.get_operator_display }}</td>
+                                    <td>{{ info.get_type_display }}</td>
+                                    <td>{{ info.comment }}</td>
+                                    <td>
+                                        <a href="/assets/host/detial/?idc_id={{info.id }}"><button type="button" class="btn btn-info">详情</button></a>
+                                        <a href="/assets/host/edit/?idc_id={{ info.id }}&status=1"><button type="button" class="btn btn-warning">编辑</button></a>
+                                        <a href="/assets/host/del/?idc_id={{ info.id }}&status=1"><button type="button" class="btn btn-danger">删除</button></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                            </table>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div id="host_list">
+                                        <button type="button" class="btn btn-danger" id="host_del">批量删除</button>
+                                        <!--<a value="/assets/host_edit_batch/" type="button" class="btn btn-warning iframe" id="host_edit">批量修改</a>-->
+                                        <a href="/assets/host/add/" type="button" class="btn btn-info">添加主机</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
             </div>
             <div class="row">
@@ -55,4 +134,55 @@
         </div>
 
         </div>
+{% endblock %}
+
+{% block script %}
+<script src="/static/JS/base.js"></script>
+<script src="/static/plugins/jQueryUI/jquery.cookie.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#host_del').click(function(){
+            var ids = getids();
+            if (ids == ''){
+                alert("请至少选择一行");
+                return false;
+            }
+            if (confirm("确认删除")) {
+                $.ajax({
+                   type: "POST",
+                   <!--type: "json",-->
+                   data: {ids: ids},
+                   url: "/assets/host/del_batch/",
+                   headers: {'X-CSRFtoken': $.cookie('csrftoken')},
+                   success: function () {
+                        window.open("/assets/host/list/", "_self");
+                    }
+                });
+            }
+        });
+        <!--$(".iframe").on('click', function(){-->
+            <!--var ids = getids();-->
+            <!--if (ids == ''){-->
+                <!--alter("请至少选择一行");-->
+                <!--return false;-->
+            <!--}-->
+            <!--var url = $(this).attr("value") + '?idc_id=' + ids;-->
+                <!--index = $.layer({-->
+                    <!--type: 2,-->
+                    <!--title: '追梦运维-批量修改主机',-->
+                    <!--maxmin:true,-->
+                    <!--shift: 'top',-->
+                    <!--border: [2, 0.3, '#1AB394'],-->
+                    <!--shade: [0.5, '#000000'],-->
+                    <!--shadeClose: true,-->
+                    <!--area : ['800px' , '600px'],-->
+                    <!--iframe: {src: url},-->
+                    <!--close: function(){-->
+                        <!--location.replace(location.href);-->
+                    <!--}-->
+                <!--});-->
+        <!--});-->
+
+    });
+</script>
 {% endblock %}

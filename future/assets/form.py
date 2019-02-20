@@ -29,6 +29,7 @@ class Host_from(forms.ModelForm):
 
         widgets = {
             "host_name": forms.TextInput(attrs={'class': 'form-control'}),
+            "type": forms.Select(attrs={'class': 'form-control'}),
             "idc": forms.Select(attrs={'class': 'form-control'}),
             "eth1": forms.TextInput(attrs={'class': 'form-control '}),
             "cpu": forms.TextInput(attrs={'class': 'form-control'}),

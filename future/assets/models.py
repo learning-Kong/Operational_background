@@ -71,12 +71,16 @@ SYSTEM_CHOICES = (
     (1, "Windows"),
     (2, "Ubuntu"),
 )
-
+TYPE_CHOICES = (
+    (0, "云主机"),
+    (1, "物理机"),
+)
 class Host(models.Model):
     host_name = models.CharField(max_length=64, blank=True, null=True, verbose_name="主机名")
     idc = models.ForeignKey(IDC, blank=True, null=True, verbose_name="机房", on_delete=models.SET_NULL)
+    type = models.IntegerField(verbose_name="机器类型", choices=TYPE_CHOICES, default=0, blank=True)
     eth1 = models.GenericIPAddressField(protocol="IPV4", null=True, verbose_name="IP地址", unique=True)
-    eth2 = models.GenericIPAddressField(blank=True, null=True, verbose_name="IP地址2", default='null', unique=True)
+    eth2 = models.GenericIPAddressField(blank=True, null=True, verbose_name="IP地址2", default='null')
     cpu = models.CharField(max_length=64, blank=True, null=True, verbose_name='CPU')
     memory = models.CharField(max_length=64, blank=True, null=True, verbose_name="内存")
     hard_disk = models.CharField(max_length=64, blank=True, null=True, verbose_name='硬盘')

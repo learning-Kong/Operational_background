@@ -149,7 +149,7 @@ def host_add(request):
             return render(request, 'assets/host_add.html', {'host_form': obj})
         else:
             obj.save()
-            return HttpResponse(123)
+            return redirect("/assets/host/add/")
 
 @auth
 def host_list(request):
@@ -161,8 +161,19 @@ def host_list(request):
         page_num = 7  # 页数标签个数
         page_obj = paging1.Page(current_page, num, per_page, page_num, url)
         host_info = models.Host.objects.filter()[page_obj.start():page_obj.end()]
-        print(host_info)
-        for i in host_info:
-            print(i.host_name)
         page_str = page_obj.page_str()
-        return render(request, "assets/host_list.html", {'host_info': host_info, 'page_str': page_str})
+        host_num = models.Host.objects.filter().count()
+        print(host_num)
+        return render(request, "assets/host_list.html", {'host_info': host_info, 'page_str': page_str, 'host_num': host_num})
+
+def host_del_batch(request):
+    if request.method == "POST":
+        data = request.POST.get('ids')
+        print(data)
+        del_id = data.split(',')
+        for i in del_id:
+            print(i)
+        print(del_id)
+        return HttpResponse('nice')
+    if request.method == "GET":
+        return HttpResponse('请求错误')
