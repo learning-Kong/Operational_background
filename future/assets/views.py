@@ -163,8 +163,15 @@ def host_list(request):
         host_info = models.Host.objects.filter()[page_obj.start():page_obj.end()]
         page_str = page_obj.page_str()
         host_num = models.Host.objects.filter().count()
-        print(host_num)
-        return render(request, "assets/host_list.html", {'host_info': host_info, 'page_str': page_str, 'host_num': host_num})
+        physic_num = models.Host.objects.filter(type=1).count()
+        vm_num = models.Host.objects.filter(type=0).count()
+        return render(request, "assets/host_list.html", {
+                                                         'host_info': host_info,
+                                                         'page_str': page_str,
+                                                         'host_num': host_num,
+                                                         'physic_num': physic_num,
+                                                         'vm_num': vm_num
+                                                         })
 
 def host_del_batch(request):
     if request.method == "POST":

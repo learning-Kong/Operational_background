@@ -22,8 +22,8 @@
                             <label>
                                 <select name="change_idc" class="form-control m-b" onchange="change_info()" style="width: 110px">
                                     <option value="">所有机房</option>
-                                    {% for i in idcs %}
-                                        <option value="{{i.name}}"> {{ i }}</option>
+                                    {% for i in host_info %}
+                                        <option value="{{i.idc_id}}"> {{ i.idc.name }}</option>
                                     {% endfor %}
                                 </select>
                             </label>
@@ -32,8 +32,8 @@
                             <label>
                                 <select name="change_business" class="form-control m-b" onchange="change_info()" style="width: 110px">
                                     <option value="all">所有项目</option>
-                                    {% for i in server_type %}
-                                    <option value="{{i.service_name}}"> {{ i }}</option>
+                                    {% for i in host_info %}
+                                    <option value="{{i.business_id}}"> {{ i.business.project_name }}</option>
                                     {% endfor %}
                                 </select>
                             </label>
@@ -84,8 +84,9 @@
                                     <th class="text-center"><input type="checkbox" id="select_all" onclick="check_all('asset_form')"></th>
                                     <th>服务器名</th>
                                     <th>IP地址</th>
-                                    <th>IDC</th>
                                     <th>项目</th>
+                                    <th>IDC</th>
+                                    <th>机型</th>
                                     <th>状态</th>
                                     <th>操作</th>
                                 </tr>
@@ -95,10 +96,11 @@
                                 <tr class="gradeX">
                                     <td class="text-center"><input type="checkbox" name="selected" value="{{ info.id }}"></td>
                                     <td>{{ info.host_name }}</td>
-                                    <td>{{ info.address }}</td>
-                                    <td>{{ info.get_operator_display }}</td>
+                                    <td>{{ info.eth1 }}</td>
+                                    <td>{{ info.business.project_name }}</td>
+                                    <td>{{ info.idc.name }}</td>
                                     <td>{{ info.get_type_display }}</td>
-                                    <td>{{ info.comment }}</td>
+                                    <td>{{ info.get_status_display }}</td>
                                     <td>
                                         <a href="/assets/host/detial/?idc_id={{info.id }}"><button type="button" class="btn btn-info">详情</button></a>
                                         <a href="/assets/host/edit/?idc_id={{ info.id }}&status=1"><button type="button" class="btn btn-warning">编辑</button></a>
