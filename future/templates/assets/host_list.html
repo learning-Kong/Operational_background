@@ -22,8 +22,8 @@
                             <label>
                                 <select name="change_idc" class="form-control m-b" onchange="change_info()" style="width: 110px">
                                     <option value="">所有机房</option>
-                                    {% for i in host_info %}
-                                        <option value="{{i.idc_id}}"> {{ i.idc.name }}</option>
+                                    {% for i in idc_name %}
+                                        <option value="{{ i.id }}"> {{ i.name }}</option>
                                     {% endfor %}
                                 </select>
                             </label>
@@ -32,8 +32,8 @@
                             <label>
                                 <select name="change_business" class="form-control m-b" onchange="change_info()" style="width: 110px">
                                     <option value="all">所有项目</option>
-                                    {% for i in host_info %}
-                                    <option value="{{i.business_id}}"> {{ i.business.project_name }}</option>
+                                    {% for i in project_name %}
+                                    <option value="{{i.id}}"> {{ i.project_name }}</option>
                                     {% endfor %}
                                 </select>
                             </label>
@@ -186,5 +186,16 @@
         <!--});-->
 
     });
+    function change_info(){
+        $.ajax({
+            type: "GET",
+            url: "/assets/host/change_info_ajax/",
+            data: $("#asset_form").serialize(),
+            success: function(data){
+                $("#replaec").html(data)
+            }
+        });
+    }
+
 </script>
 {% endblock %}

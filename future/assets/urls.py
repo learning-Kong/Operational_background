@@ -18,4 +18,5 @@ urlpatterns = [
     path('host/add/', views.host_add),
     path('host/list/', views.host_list),
     path('host/del_batch/', views.host_del_batch),
+    path('host/change_info_ajax/', views.host_search),
 ]

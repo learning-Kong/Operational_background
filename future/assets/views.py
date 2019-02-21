@@ -162,6 +162,8 @@ def host_list(request):
         page_obj = paging1.Page(current_page, num, per_page, page_num, url)
         host_info = models.Host.objects.filter()[page_obj.start():page_obj.end()]
         page_str = page_obj.page_str()
+        idc_name = models.IDC.objects.values("id", "name").distinct()
+        project_name = models.Project.objects.values("id", "project_name")
         host_num = models.Host.objects.filter().count()
         physic_num = models.Host.objects.filter(type=1).count()
         vm_num = models.Host.objects.filter(type=0).count()
@@ -170,7 +172,9 @@ def host_list(request):
                                                          'page_str': page_str,
                                                          'host_num': host_num,
                                                          'physic_num': physic_num,
-                                                         'vm_num': vm_num
+                                                         'vm_num': vm_num,
+                                                         'idc_name': idc_name,
+                                                         'project_name': project_name,
                                                          })
 
 def host_del_batch(request):
@@ -184,3 +188,10 @@ def host_del_batch(request):
         return HttpResponse('nice')
     if request.method == "GET":
         return HttpResponse('请求错误')
+
+def host_search(request):
+    if request.method == "GET":
+        print("success")
+        data = request.GET
+        print(data)
+        return HttpResponse(123)
