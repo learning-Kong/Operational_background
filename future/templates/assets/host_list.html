@@ -21,7 +21,7 @@
                         <div class="col-sm-1 test_width" style="width: 140px">
                             <label>
                                 <select name="change_idc" class="form-control m-b" onchange="change_info()" style="width: 110px">
-                                    <option value="">所有机房</option>
+                                    <option value="all">所有机房</option>
                                     {% for i in idc_name %}
                                         <option value="{{ i.id }}"> {{ i.name }}</option>
                                     {% endfor %}
@@ -125,16 +125,15 @@
 
                 </div>
             </div>
-            <div class="row">
-            <div class="col-sm-7">
-                <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                    <ul class="pagination pull-right">
-                        {{ page_str }}
-                    </ul>
+            <div id="replace_2" class="row">
+                <div class="col-sm-7">
+                    <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                        <ul class="pagination pull-right">
+                            {{ page_str }}
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-
         </div>
 {% endblock %}
 
@@ -162,29 +161,6 @@
                 });
             }
         });
-        <!--$(".iframe").on('click', function(){-->
-            <!--var ids = getids();-->
-            <!--if (ids == ''){-->
-                <!--alter("请至少选择一行");-->
-                <!--return false;-->
-            <!--}-->
-            <!--var url = $(this).attr("value") + '?idc_id=' + ids;-->
-                <!--index = $.layer({-->
-                    <!--type: 2,-->
-                    <!--title: '追梦运维-批量修改主机',-->
-                    <!--maxmin:true,-->
-                    <!--shift: 'top',-->
-                    <!--border: [2, 0.3, '#1AB394'],-->
-                    <!--shade: [0.5, '#000000'],-->
-                    <!--shadeClose: true,-->
-                    <!--area : ['800px' , '600px'],-->
-                    <!--iframe: {src: url},-->
-                    <!--close: function(){-->
-                        <!--location.replace(location.href);-->
-                    <!--}-->
-                <!--});-->
-        <!--});-->
-
     });
     function change_info(){
         $.ajax({
@@ -192,7 +168,15 @@
             url: "/assets/host/change_info_ajax/",
             data: $("#asset_form").serialize(),
             success: function(data){
-                $("#replaec").html(data)
+                $("#replace").html(data);
+                $.ajax({
+                    type: "GET",
+                    url: "/assets/host/change_page/",
+                    data: $("#asset_form").serialize(),
+                    success: function(data){
+                        $("#replace_2").html(data)
+                    }
+                });
             }
         });
     }

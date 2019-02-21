@@ -191,7 +191,23 @@ def host_del_batch(request):
 
 def host_search(request):
     if request.method == "GET":
-        print("success")
         data = request.GET
-        print(data)
-        return HttpResponse(123)
+        change_idc = request.GET.get("change_idc")
+        change_business = request.GET.get("change_business")
+        change_service = request.GET.get("change_service")
+        change_status = request.GET.get("change_status")
+        change_brand = request.GET.get("change_brand")
+        change_type = request.GET.get("change_type")
+        page_str = 1
+        host_dict = {"idc_id": change_idc, "business_id": change_business}
+        select = {}
+        for key, value in host_dict.items():
+            if value != "all":
+                select[key] = value
+        print(change_idc, change_business, change_service, change_status, change_brand, change_type)
+        host_info = models.Host.objects.filter(**select)
+        return render(request, "assets/host_info_ajax.html", locals())
+
+def change_page(request):
+    return HttpResponse(123)
+
