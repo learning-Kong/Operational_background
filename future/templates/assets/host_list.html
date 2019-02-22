@@ -43,7 +43,7 @@
                                 <select name="change_service" class="form-control m-b" onchange="change_info()" style="width: 110px">
                                     <option value="all">所有服务</option>
                                     {% for i in services %}
-                                    <option value="{{i.name}}"> {{ i }}</option>
+                                    <option value="{{i.0}}"> {{ i.1 }}</option>
                                     {% endfor %}
                                 </select>
                             </label>
@@ -51,7 +51,7 @@
                          <div class="col-sm-1 test_width" style="width: 140px">
                              <label>
                                  <select name="change_status" class="form-control m-b" onchange="change_info()" style="width: 110px">
-                                     <option value="">所有状态</option>
+                                     <option value="all">所有状态</option>
                                      {% for i in server_status %}
                                      <option value="{{ i.0 }}"> {{ i.1 }}</option>
                                      {% endfor %}
@@ -61,7 +61,7 @@
                         <div class="col-sm-1 test_width" style="width: 140px">
                             <label>
                                 <select name="change_brand" class="form-control m-b" onchange="change_info()" style="width: 110px" >
-                                    <option value="">所有型号</option>
+                                    <option value="all">所有型号</option>
                                     {% for i in brands %}
                                     <option value="{{ i.0 }}"> {{ i.1 }}</option>
                                     {% endfor %}
@@ -71,9 +71,10 @@
                         <div class="col-sm-1 test_width" style="width: 140px">
                             <label>
                                 <select name="change_type" class="form-control m-b" onchange="change_info()" style="width: 110px">
-                                    <option value="">所有类型</option>
-                                    <option value="1">物理机</option>
-                                    <option value="0">虚拟机</option>
+                                    <option value="all">所有类型</option>
+                                    {% for i in host_type %}
+                                    <option value="{{ i.0 }}"> {{ i.1 }}</option>
+                                    {% endfor %}
                                 </select>
                             </label>
                         </div>

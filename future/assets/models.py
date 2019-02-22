@@ -75,6 +75,11 @@ TYPE_CHOICES = (
     (0, "云主机"),
     (1, "物理机"),
 )
+SERVER_TYPE = (
+    (0, "游戏服务"),
+    (1, "网站服务"),
+    (2, "备份服务")
+)
 class Host(models.Model):
     host_name = models.CharField(max_length=64, blank=True, null=True, verbose_name="主机名")
     idc = models.ForeignKey(IDC, blank=True, null=True, verbose_name="机房", on_delete=models.SET_NULL)
@@ -89,6 +94,7 @@ class Host(models.Model):
     create_time = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
     end_time = models.DateTimeField(blank=True, null=True, verbose_name="结束时间")
     business = models.ForeignKey(Project, blank=True, null=True, verbose_name="所属业务", on_delete=models.SET_NULL)
+    server_type = models.IntegerField(verbose_name="机器服务", choices=SERVER_TYPE, default=0, blank=True)
     status = models.IntegerField(verbose_name="机器状态", choices=SERVER_STATUS, default=0, blank=True)
     idle = models.BooleanField(verbose_name="状态", choices=BOOL_CHOICES, default=False)
     editor = models.TextField(blank=True, null=True, verbose_name="备注")

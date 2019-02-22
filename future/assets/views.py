@@ -167,6 +167,10 @@ def host_list(request):
         host_num = models.Host.objects.filter().count()
         physic_num = models.Host.objects.filter(type=1).count()
         vm_num = models.Host.objects.filter(type=0).count()
+        services = models.SERVER_TYPE
+        server_status = models.SERVER_STATUS
+        brands = models.SYSTEM_CHOICES
+        host_type = models.TYPE_CHOICES
         return render(request, "assets/host_list.html", {
                                                          'host_info': host_info,
                                                          'page_str': page_str,
@@ -175,6 +179,10 @@ def host_list(request):
                                                          'vm_num': vm_num,
                                                          'idc_name': idc_name,
                                                          'project_name': project_name,
+                                                         'services': services,
+                                                         'server_status': server_status,
+                                                         'brands': brands,
+                                                         'host_type': host_type,
                                                          })
 
 def host_del_batch(request):
@@ -199,12 +207,13 @@ def host_search(request):
         change_brand = request.GET.get("change_brand")
         change_type = request.GET.get("change_type")
         page_str = 1
-        host_dict = {"idc_id": change_idc, "business_id": change_business}
+        host_dict = {"idc_id": change_idc, "business_id": change_business, "server_type": change_service, "status": change_status, "system": change_brand, "type": change_type}
         select = {}
         for key, value in host_dict.items():
             if value != "all":
                 select[key] = value
         print(change_idc, change_business, change_service, change_status, change_brand, change_type)
+        print(select)
         host_info = models.Host.objects.filter(**select)
         return render(request, "assets/host_info_ajax.html", locals())
 
