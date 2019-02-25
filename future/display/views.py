@@ -26,7 +26,7 @@ def login(request):
         return HttpResponse(r.text)
 def chartdisplay(request):
     t = int(time.time())
-    params= {"step": 60,"start_time": 1548112805,"hostnames": ["localhost.localdomain"],"end_time": 1548194805,"counters": ["cpu.idle"],"consol_fun": "AVERAGE"}
+    params= {"step": 60,"start_time": 1548112805,"hostnames": ["localhost.localdomain"],"end_time": 1549894805,"counters": ["cpu.idle"],"consol_fun": "AVERAGE"}
     head = {'Apitoken':json.dumps({"name":"root","sig":"13953a520ff211e9917686bf05b23eb4"}),'X-Forwarded-For':'192.168.15.156',"Content-Type": "application/json"}
     print('\n','aaaaaaaaaaaa')
     r = requests.post("%s/graph/history" % (config.API_ADDR), data=json.dumps(params), headers=head)
