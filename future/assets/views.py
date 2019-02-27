@@ -9,6 +9,8 @@ from .form import IDC_form, Project_form, Host_from
 from . import paging, paging1
 from django.db import IntegrityError
 
+Host_per_page = 3       #定义host list显示的每页个数（全局变量）
+
 # Create your views here.
 @auth
 def idc_add(request):
@@ -153,13 +155,15 @@ def host_add(request):
 
 @auth
 def host_list(request):
+    global Host_per_page
     if request.method == "GET":
         current_page = int(request.GET.get('p', 1))  # 获取当前页码
         num = models.Host.objects.all().count()  # 数据库数据个数
         url = "/assets/host/list/"
-        per_page = 3  # 每页显示个数
+        per_page = Host_per_page  # 每页显示个数
         page_num = 7  # 页数标签个数
         page_obj = paging1.Page(current_page, num, per_page, page_num, url)
+        print(page_obj.start(), page_obj.end())
         host_info = models.Host.objects.filter()[page_obj.start():page_obj.end()]
         page_str = page_obj.page_str()
         idc_name = models.IDC.objects.values("id", "name").distinct()
@@ -198,6 +202,7 @@ def host_del_batch(request):
         return HttpResponse('请求错误')
 
 def host_search(request):
+    global Host_per_page
     if request.method == "GET":
         data = request.GET
         change_idc = request.GET.get("change_idc")
@@ -206,6 +211,38 @@ def host_search(request):
         change_status = request.GET.get("change_status")
         change_brand = request.GET.get("change_brand")
         change_type = request.GET.get("change_type")
+        status = request.GET.get("status", '')
+        current_page = request.GET.get("p", 1)
+        page_str = 1
+        host_dict = {"idc_id": change_idc, "business_id": change_business, "server_type": change_service, "status": change_status, "system": change_brand, "type": change_type}
+        select = {}
+        for key, value in host_dict.items():
+            if value != "all":
+                select[key] = value
+        print(change_idc, change_business, change_service, change_status, change_brand, change_type)
+        print(select)
+        host_info = models.Host.objects.filter(**select)[(current_page-1)*Host_per_page:current_page*Host_per_page]
+        if status:
+            current_page = int(request.GET.get('p', 1))  # 获取当前页码
+            num = models.Host.objects.filter(**select).count()  # 数据库数据个数
+            url = "/assets/host/list/"
+            per_page = Host_per_page  # 每页显示个数
+            page_num = 7  # 页数标签个数
+            print(12312313213132132)
+            return HttpResponse(123)
+        return render(request, "assets/host_info_ajax.html", locals())
+
+def change_page(request):
+    if request.method == "GET":
+        data = request.GET
+        change_idc = request.GET.get("change_idc")
+        change_business = request.GET.get("change_business")
+        change_service = request.GET.get("change_service")
+        change_status = request.GET.get("change_status")
+        change_brand = request.GET.get("change_brand")
+        change_type = request.GET.get("change_type")
+        status = request.GET.get("status")
+        print(status)
         page_str = 1
         host_dict = {"idc_id": change_idc, "business_id": change_business, "server_type": change_service, "status": change_status, "system": change_brand, "type": change_type}
         select = {}
@@ -216,7 +253,5 @@ def host_search(request):
         print(select)
         host_info = models.Host.objects.filter(**select)
         return render(request, "assets/host_info_ajax.html", locals())
-
-def change_page(request):
-    return HttpResponse(123)
+        # return HttpResponse(123)
 
