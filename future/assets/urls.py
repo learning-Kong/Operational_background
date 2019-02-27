@@ -19,5 +19,6 @@ urlpatterns = [
     path('host/list/', views.host_list),
     path('host/del_batch/', views.host_del_batch),
     path('host/change_info_ajax/', views.host_search),
-    path('host/change_page/', views.change_page),
+    # path('host/change_page/', views.change_page),
+    path('host/detail/', views.host_detail),
 ]

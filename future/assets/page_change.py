@@ -1,14 +1,17 @@
 # -*- coding:utf-8 -*-
 # author: "Xianglei Kong"
 
+#url 参数改进版试用性更强
 from django.utils.safestring import mark_safe
 
 class Page:
-    def __init__(self, current_page, data_count, per_page, page_num):
+    def __init__(self, current_page, data_count, per_page, page_num, page_url):
         self.current_page = current_page
         self.data_count = data_count
         self.per_page = per_page
         self.page_num = page_num
+        self.page_url = page_url
+
     def start(self):
         return (self.current_page - 1) * self.per_page
 
@@ -21,6 +24,7 @@ class Page:
         if remainder:
             quotient += 1
         return quotient
+
     def page_str(self):
         page_list = []
 
@@ -49,9 +53,9 @@ class Page:
         else:
             prev = '''
                 <li class="paginate_button">
-                    <a href="/assets/idc_list/?p=%s;" aria-controls="example2" data-dt-idx="0" tabindex="0">上一页</a>
+                    <a href="javascript:void(0);" aria-controls="example2" data-dt-idx="0" tabindex="0" onclick="change_page(this)" name="%s">上一页</a>
                 </li>
-            ''' % (self.current_page - 1,)
+            ''' % (self.current_page - 1)
         page_list.append(prev)
 
         #处理页码跳转
@@ -59,13 +63,13 @@ class Page:
             if i == self.current_page:
                 temp = '''
                     <li class="paginate_button active">
-                        <a href="/assets/idc_list/?p=%s" aria-controls="example2" data-dt-idx="0" tabindex="0">%s</a>
+                        <a href="javascript:void(0);" aria-controls="example2" data-dt-idx="0" tabindex="0" onclick="change_page(this)" name="%s">%s</a>
                     </li>
                 ''' % (i, i)
             else:
                 temp = '''
                     <li class="paginate_button">
-                        <a href="/assets/idc_list/?p=%s" aria-controls="example2" data-dt-idx="0" tabindex="0">%s</a>
+                        <a href="javascript:void(0);" aria-controls="example2" data-dt-idx="0" tabindex="0" onclick="change_page(this)" name="%s">%s</a>
                     </li>
                 ''' % (i, i)
             page_list.append(temp)
@@ -80,9 +84,9 @@ class Page:
         else:
             jump = '''
                 <li class="paginate_button">
-                    <a href="/assets/idc_list/?p=%s;" aria-controls="example2" data-dt-idx="0" tabindex="0">下一页</a>
+                    <a href="javascript:void(0);" aria-controls="example2" data-dt-idx="0" tabindex="0" onclick="change_page(this)" name="%s">下一页</a>
                 </li>
-            ''' % (self.current_page + 1,)
+            ''' % (self.current_page + 1)
         page_list.append(jump)
 
         #设置为安全
