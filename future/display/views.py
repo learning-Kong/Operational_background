@@ -27,11 +27,11 @@ def login(request):
 def chartdisplay(request):
     t = int(time.time())
     params= {"step": 60,"start_time": 1551711152,"hostnames": ["VM_72_46_centos"],"end_time": 1551712152,"counters": ["cpu.idle"],"consol_fun": "AVERAGE"}
-    head = {'Apitoken':json.dumps({"name":"lktest","sig":"268656f33e5c11e9b8ad525400c86780"}),'X-Forwarded-For':'192.168.15.156',"Content-Type": "application/json"}
+    head = {'Apitoken':json.dumps({"name":"lktest","sig":"21282928401811e9b8ad525400c86780"}),'X-Forwarded-For':'192.168.15.156',"Content-Type": "application/json"}
     print('\n','aaaaaaaaaaaa')
     r = requests.post("%s/graph/history" % (config.API_ADDR), data=json.dumps(params), headers=head)
     a=r.json()
-    print(a)
+    #print(a)
     print(a[0]['Values'])
     # tlist=[]
     # vlist=[]
@@ -49,7 +49,7 @@ def chartdisplay(request):
     #     print(x['value'])
     #print(r.text,'\n',a[0]['Values'])
     #print(tlist,vlist)
-    print(int(t))
+    #print(int(t))
     #return HttpResponse(r.text)
     #return render(request, 'display/chart.html',{'tlist': tlist,'vlist':vlist})
     #return render(request, 'display/chart.html',{'tlist': test.timestamp.tolist(),'vlist':test.value.tolist()})

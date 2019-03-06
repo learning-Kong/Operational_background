@@ -19,12 +19,23 @@ $(document).ready(function(){
             var result =eval(data1)
             //console.log(result[0]["Values"][0]["value"]);
             //$("#text1").text(result[0]["Values"][0]["timestamp"]);
-            //console.log(data1);
+            console.log(data1);
             console.log(number=result[0]["Values"].length)
             labels1=new Array()
             data2=new Array()
             tt=new Array()
             data3=new Array()
+            if (result[0]["Values"].length<6){
+                for (i in result[0]["Values"]){
+                labels1.push(result[0]["Values"][i]["timestamp"]*1000);
+                data2.push(result[0]["Values"][i]["value"]);
+                tt.push({x:result[0]["Values"][i]["timestamp"]*1000,y:result[0]["Values"][i]["value"]})
+                //console.log(result[0]["Values"][i]["timestamp"]*1000)
+                result[0]["Values"][i]["timestamp"]=result[0]["Values"][i]["timestamp"]*1000
+                }
+                xx={"timestamp":1551711152000,"Values":NaN}
+                result[0]["Values"].push(xx)
+            }else{
             for (i in result[0]["Values"]){
                 labels1.push(result[0]["Values"][i]["timestamp"]*1000);
                 data2.push(result[0]["Values"][i]["value"]);
@@ -32,7 +43,9 @@ $(document).ready(function(){
                 //console.log(result[0]["Values"][i]["timestamp"]*1000)
                 result[0]["Values"][i]["timestamp"]=result[0]["Values"][i]["timestamp"]*1000
                 }
+            }
             //console.log(data2,labels1,tt)
+            console.log(result[0]["Values"])
             $("#hh33").text(result[0]["counter"])
 
 
