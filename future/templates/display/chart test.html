@@ -5,7 +5,7 @@
     <title>Title</title>
     <script type="text/javascript"  src="/static/chart.js"></script>
     <script type="text/javascript"  src="/static/jquery.js"></script>
-    <script type="text/javascript"  src="/static/g2.js"></script>
+    <script type="text/javascript"  src="/static/g2/g2.js"></script>
 </head>
 <body>
 <button id="button1">加载图表</button>
@@ -17,9 +17,9 @@ $(document).ready(function(){
 
         $.ajax({url:"/display/chart/",success:function(data1){
             var result =eval(data1)
-            console.log(result[0]["Values"][0]["value"]);
+            //console.log(result[0]["Values"][0]["value"]);
             //$("#text1").text(result[0]["Values"][0]["timestamp"]);
-            console.log(data1);
+            //console.log(data1);
             console.log(number=result[0]["Values"].length)
             labels1=new Array()
             data2=new Array()
@@ -29,10 +29,10 @@ $(document).ready(function(){
                 labels1.push(result[0]["Values"][i]["timestamp"]*1000);
                 data2.push(result[0]["Values"][i]["value"]);
                 tt.push({x:result[0]["Values"][i]["timestamp"]*1000,y:result[0]["Values"][i]["value"]})
-                console.log(result[0]["Values"][i]["timestamp"]*1000)
+                //console.log(result[0]["Values"][i]["timestamp"]*1000)
                 result[0]["Values"][i]["timestamp"]=result[0]["Values"][i]["timestamp"]*1000
                 }
-            console.log(data2,labels1,tt)
+            //console.log(data2,labels1,tt)
             $("#hh33").text(result[0]["counter"])
 
 
@@ -46,7 +46,8 @@ $(document).ready(function(){
       chart.source(result[0]["Values"], {
         timestamp: {
             type: 'time',
-            mask:'yyyy-mm-dd \n HH:mm:ss',
+            //mask:'HH:mm',
+            mask:'YYYY-MM-DD \n HH:mm:ss',
             //ticks:labels1,
             //tickInterval:1000,
             tickCount:10,
@@ -57,13 +58,13 @@ $(document).ready(function(){
           max: 100,
         }
       });
-      chart.legend({
-      selectedMode: 'single',
-      position: 'bottom', // 设置图例的显示位置
-      });
-      chart.axis('timestamp', {
-        title: null, // 不展示 xField 对应坐标轴的标题
-          });
+      //chart.legend({
+      //selectedMode: 'single',
+      //position: 'bottom', // 设置图例的显示位置
+      //});
+      //chart.axis('timestamp', {
+        //title: null, // 不展示 xField 对应坐标轴的标题
+          //});
       chart.line().position('timestamp*value');
       chart.render();
 
