@@ -234,28 +234,6 @@ def host_search(request):
             return render(request, "assets/host_page.html", locals())
         return render(request, "assets/host_info_ajax.html", locals())
 
-# def change_page(request):
-#     if request.method == "GET":
-#         data = request.GET
-#         change_idc = request.GET.get("change_idc")
-#         change_business = request.GET.get("change_business")
-#         change_service = request.GET.get("change_service")
-#         change_status = request.GET.get("change_status")
-#         change_brand = request.GET.get("change_brand")
-#         change_type = request.GET.get("change_type")
-#         status = request.GET.get("status")
-#         print(status)
-#         page_str = 1
-#         host_dict = {"idc_id": change_idc, "business_id": change_business, "server_type": change_service, "status": change_status, "system": change_brand, "type": change_type}
-#         select = {}
-#         for key, value in host_dict.items():
-#             if value != "all":
-#                 select[key] = value
-#         print(change_idc, change_business, change_service, change_status, change_brand, change_type)
-#         print(select)
-#         host_info = models.Host.objects.filter(**select)
-#         return render(request, "assets/host_info_ajax.html", locals())
-#         # return HttpResponse(123
-
 def host_detail(request):
-    return HttpResponse(123)
+
+    return render(request, "assets/host_detail.html")
