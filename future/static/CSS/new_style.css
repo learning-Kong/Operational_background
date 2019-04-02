@@ -1,0 +1,29 @@
+.K-text-navy {
+  color: #1ab394;
+}
+.K-text-primary {
+  color: inherit;
+}
+
+.ibox-content {
+  background-color: #ffffff;
+  color: inherit;
+  padding: 15px 20px 20px 20px;
+  border-color: #e7eaec;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 1px 0px;
+}
+
+.ibox-content {
+  clear: both;
+}
+
+.ibox-heading {
+  background-color: #bae6dd;
+  border-bottom: none;
+}
+.ibox-heading h3 {
+  font-weight: 200;
+  font-size: 24px;
+}

@@ -3029,7 +3029,7 @@ table.table-mail tr td {
   clear: both;
 }
 .ibox-heading {
-  background-color: #f3f6fb;
+  background-color: #bae6dd;
   border-bottom: none;
 }
 .ibox-heading h3 {
@@ -3182,7 +3182,7 @@ table.table-mail tr td {
   margin-top: 0;
 }
 /* COLORS */
-.text-navy {
+.K-text-navy {
   color: #1ab394;
 }
 .K-text-primary {

@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block title %} 详细信息 {% endblock %}
 {% block css %}
-<!--<link rel="stylesheet" href="/static/CSS/style.css">-->
-<!--<link rel="stylesheet" href="/static/CSS/animate.css">-->
+<link rel="stylesheet" href="/static/CSS/new_style.css">
+<link rel="stylesheet" href="/static/CSS/animate.css">
 {% endblock %}
 {% block content %}
 <section class="content-header">
@@ -22,131 +22,104 @@
         <div class="box-header with-border">
           <i class="fa fa-bar-chart-o"></i>
           <h3 class="box-title"><b>{{ host.eth1 }}192.168.168.1</b></h3>
-          <!--<h3 class="text K-text-primary"><b>{{ host.eth1 }}192.168.168.1</b></h3>-->
+
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
             </button>
             <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
           </div>
+        </div>
+        <div class="box-body">
           <div class="ibox-content ibox-heading">
             <h3>主机基本信息</h3>
             <small><i class="fa fa-map-marker"></i> 此主机基本信息.</small>
           </div>
-        </div>
-
-        <div class="ibox-content">
-          <div>
-            <div class="text-left">
-              <table class="table">
-                <tr>
-                  <td class="text-navy">IP</td>
-                  <td>{{ host.eth1 }}</td>
-                </tr>
-                <tr>
-                  <td class="text-navy">主机名</td>
-                  <td>{{ host.node_name }}</td>
-                </tr>
-                <tr>
-                  <td class="text-navy">MAC</td>
-                  <td>{{ host.mac }}</td>
-                </tr>
-                <tr>
-                  <td class="text-navy">远控卡IP</td>
-                  <td>{{ host.internal_ip}}</td>
-                </tr>
-                <tr>
-                  <td class="text-navy">所属业务</td>
-                  <td>
-                    <table class="table">
-                      {% for s in host.business.all %}
-                      <tr>
-                        <td>{{ s.service_name }}</td>
-                      </tr>
-                      {% endfor %}
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-navy">服务</td>
-                  <td>
-                    <table class="table">
-                      {% for s in host.service.all %}
-                      <tr>
-                        <td>{{ s.name }} -- {{ s.port }}</td>
-                      </tr>
-                      {% endfor %}
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-navy">环境</td>
-                  <td>{{ host.env}}</td>
-                </tr>
-                <tr>
-                  <td class="text-navy">主机类型</td>
-                  {% if host.vm %}
-                  <td>虚拟机</td>
-                  {% else %}
-                  <td>物理机</td>
-                  {% endif %}
-                </tr>
-                <tr>
-                  <td class="text-navy">IDC</td>
-                  <td>{{ host.idc.name }} </td>
-                </tr>
-                <tr>
-                  <td class="text-navy">机柜信息</td>
-                  <td>{{ host.cabinet }} {% if host.server_cabinet_id %} - {{ host.server_cabinet_id }} {% endif %} </td>
-                </tr>
-                <tr>
-                  <td class="text-navy">品牌</td>
-                  <td>{{ host.brand }} </td>
-                </tr>
-                <tr>
-                  <td class="text-navy">CPU</td>
-                  <td>{{ host.cpu }}</td>
-                </tr>
-                <tr>
-                  <td class="text-navy">内存</td>
-                  <td>{{ host.memory }} </td>
-                </tr>
-                <tr>
-                  <td class="text-navy">硬盘</td>
-                  <td>{{ host.hard_disk }} </td>
-                </tr>
-                <tr>
-                  <td class="text-navy">机器状态</td>
-                  <td>{{ host.get_status_display }}</td>
-                </tr>
-                <tr>
-                  <td class="text-navy">操作系统</td>
-                  <td>{{ host.system }} - {{ host.system_cpuarch }} </td>
-                </tr>
-                <tr>
-                  <td class="text-navy">资产编号</td>
-                  <td>{{ host.number }} </td>
-                </tr>
-                <tr>
-                  <td class="text-navy">SN号</td>
-                  <td>{{ host.server_sn }} </td>
-                </tr>
-                <tr>
-                  <td class="text-navy">快速服务编码</td>
-                  <td>{{ host.Services_Code }} </td>
-                </tr>
-                <tr>
-                  <td class="text-navy">激活</td>
-                  <td>{{ host.is_active}}</td>
-                </tr>
-                <tr>
-                  <td class="text-navy">添加日期</td>
-                  <td>{{ host.create_time|date:"Y-m-d" }}</td>
-                </tr>
-                <tr>
-                  <td class="text-navy">备注</td>
-                  <td>{{ host.editor }}</td>
-                </tr>
-              </table>
+          <div class="ibox-content">
+            <div>
+              <div class="text-left">
+                <table class="table">
+                  <tr>
+                    <td class="K-text-navy">IP</td>
+                    <td>{{ host.eth1 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">内网IP</td>
+                    <td>{{ host.internal_ip}}</td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">所属业务</td>
+                    <td>
+                      <table class="table">
+                        {% for s in host.business.all %}
+                        <tr>
+                          <td>{{ s.service_name }}</td>
+                        </tr>
+                        {% endfor %}
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">服务</td>
+                    <td>
+                      <table class="table">
+                        {% for s in host.service.all %}
+                        <tr>
+                          <td>{{ s.name }} -- {{ s.port }}</td>
+                        </tr>
+                        {% endfor %}
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">环境</td>
+                    <td>{{ host.env}}</td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">主机类型</td>
+                    {% if host.vm %}
+                    <td>虚拟机</td>
+                    {% else %}
+                    <td>物理机</td>
+                    {% endif %}
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">IDC</td>
+                    <td>{{ host.idc.name }} </td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">机柜信息</td>
+                    <td>{{ host.cabinet }} {% if host.server_cabinet_id %} - {{ host.server_cabinet_id }} {% endif %} </td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">CPU</td>
+                    <td>{{ host.cpu }}</td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">内存</td>
+                    <td>{{ host.memory }} </td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">硬盘</td>
+                    <td>{{ host.hard_disk }} </td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">机器状态</td>
+                    <td>{{ host.get_status_display }}</td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">操作系统</td>
+                    <td>{{ host.system }} - {{ host.system_cpuarch }} </td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">添加日期</td>
+                    <td>{{ host.create_time|date:"Y-m-d" }}</td>
+                  </tr>
+                  <tr>
+                    <td class="K-text-navy">备注</td>
+                    <td>{{ host.editor }}</td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
         </div>
