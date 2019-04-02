@@ -237,3 +237,6 @@ def host_search(request):
 def host_detail(request):
 
     return render(request, "assets/host_detail.html")
+def host_bak(request):
+
+    return render(request, "assets/host_detail_bak.html")

@@ -1,141 +1,157 @@
 {% extends 'base.html' %}
 {% block title %}IDC列表{% endblock %}
 {% block content %}
-        <div class="box box-info">
-            <div class="box-header with-border">
-                <h3 class="box-title"><b>追梦</b>-项目管理</h3>
+<div class="box box-info">
+    <div class="box-header with-border">
+        <h3 class="box-title"><b>追梦</b>-项目管理</h3>
+    </div>
+    <!--表头-->
+    <div class="box float-e-margins">
+        <div class="box-header with-border">
+            <h3 class="box-title">主机列表| LIST HOST</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i>
+                </button>
             </div>
-            <!--表头-->
-            <div class="box float-e-margins">
-                <div class="box-header with-border">
-                    <h3 class="box-title">主机列表| LIST HOST</h3>
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
-                    </div>
-                    <h5> 主机详细信息列表 <span style="color:red">总共有:{{ host_num }}台  云主机: {{ vm_num }}台   物理机:{{ physic_num }}台</span></h5>
-                </div>
-                <div class="box-body">
-                    <form id="asset_form">
-                        {% csrf_token %}
-                        <div class="col-sm-1 test_width" style="width: 140px">
-                            <label>
-                                <select name="change_idc" class="form-control m-b" onchange="change_info()" style="width: 110px">
-                                    <option value="all">所有机房</option>
-                                    {% for i in idc_name %}
-                                        <option value="{{ i.id }}"> {{ i.name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </label>
-                        </div>
-                        <div class="col-sm-1 test_width" style="width: 140px">
-                            <label>
-                                <select name="change_business" class="form-control m-b" onchange="change_info()" style="width: 110px">
-                                    <option value="all">所有项目</option>
-                                    {% for i in project_name %}
-                                    <option value="{{i.id}}"> {{ i.project_name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </label>
-                        </div>
-                        <div class="col-sm-1 test_width" style="width: 140px">
-                            <label>
-                                <select name="change_service" class="form-control m-b" onchange="change_info()" style="width: 110px">
-                                    <option value="all">所有服务</option>
-                                    {% for i in services %}
-                                    <option value="{{i.0}}"> {{ i.1 }}</option>
-                                    {% endfor %}
-                                </select>
-                            </label>
-                        </div>
-                         <div class="col-sm-1 test_width" style="width: 140px">
-                             <label>
-                                 <select name="change_status" class="form-control m-b" onchange="change_info()" style="width: 110px">
-                                     <option value="all">所有状态</option>
-                                     {% for i in server_status %}
-                                     <option value="{{ i.0 }}"> {{ i.1 }}</option>
-                                     {% endfor %}
-                                 </select>
-                             </label>
-                         </div>
-                        <div class="col-sm-1 test_width" style="width: 140px">
-                            <label>
-                                <select name="change_brand" class="form-control m-b" onchange="change_info()" style="width: 110px" >
-                                    <option value="all">所有型号</option>
-                                    {% for i in brands %}
-                                    <option value="{{ i.0 }}"> {{ i.1 }}</option>
-                                    {% endfor %}
-                                </select>
-                            </label>
-                        </div>
-                        <div class="col-sm-1 test_width" style="width: 140px">
-                            <label>
-                                <select name="change_type" class="form-control m-b" onchange="change_info()" style="width: 110px">
-                                    <option value="all">所有类型</option>
-                                    {% for i in host_type %}
-                                    <option value="{{ i.0 }}"> {{ i.1 }}</option>
-                                    {% endfor %}
-                                </select>
-                            </label>
-                        </div>
-                        <div id="replace">
-                            <table id="example2" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th class="text-center"><input type="checkbox" id="select_all" onclick="check_all('asset_form')"></th>
-                                    <th>服务器名</th>
-                                    <th>IP地址</th>
-                                    <th>项目</th>
-                                    <th>IDC</th>
-                                    <th>机型</th>
-                                    <th>状态</th>
-                                    <th>操作</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {% for info in host_info %}
-                                <tr class="gradeX">
-                                    <td class="text-center"><input type="checkbox" name="selected" value="{{ info.id }}"></td>
-                                    <td>{{ info.host_name }}</td>
-                                    <td>{{ info.eth1 }}</td>
-                                    <td>{{ info.business.project_name }}</td>
-                                    <td>{{ info.idc.name }}</td>
-                                    <td>{{ info.get_type_display }}</td>
-                                    <td>{{ info.get_status_display }}</td>
-                                    <td>
-                                        <a href="/assets/host/detail/?idc_id={{info.id }}"><button type="button" class="btn btn-info">详情</button></a>
-                                        <a href="/assets/host/edit/?idc_id={{ info.id }}&status=1"><button type="button" class="btn btn-warning">编辑</button></a>
-                                        <a href="/assets/host/del/?idc_id={{ info.id }}&status=1"><button type="button" class="btn btn-danger">删除</button></a>
-                                    </td>
-                                </tr>
+            <h5> 主机详细信息列表 <span style="color:red">总共有:{{ host_num }}台  云主机: {{ vm_num }}台   物理机:{{ physic_num }}台</span>
+            </h5>
+        </div>
+        <div class="box-body">
+            <form id="asset_form">
+                {% csrf_token %}
+                <div class="col-sm-1 test_width" style="width: 140px">
+                    <label>
+                        <select name="change_idc" class="form-control m-b" onchange="change_info()"
+                                style="width: 110px">
+                            <option value="all">所有机房</option>
+                            {% for i in idc_name %}
+                            <option value="{{ i.id }}"> {{ i.name }}</option>
                             {% endfor %}
-                            </tbody>
-                            </table>
+                        </select>
+                    </label>
+                </div>
+                <div class="col-sm-1 test_width" style="width: 140px">
+                    <label>
+                        <select name="change_business" class="form-control m-b" onchange="change_info()"
+                                style="width: 110px">
+                            <option value="all">所有项目</option>
+                            {% for i in project_name %}
+                            <option value="{{i.id}}"> {{ i.project_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                </div>
+                <div class="col-sm-1 test_width" style="width: 140px">
+                    <label>
+                        <select name="change_service" class="form-control m-b" onchange="change_info()"
+                                style="width: 110px">
+                            <option value="all">所有服务</option>
+                            {% for i in services %}
+                            <option value="{{i.0}}"> {{ i.1 }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                </div>
+                <div class="col-sm-1 test_width" style="width: 140px">
+                    <label>
+                        <select name="change_status" class="form-control m-b" onchange="change_info()"
+                                style="width: 110px">
+                            <option value="all">所有状态</option>
+                            {% for i in server_status %}
+                            <option value="{{ i.0 }}"> {{ i.1 }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                </div>
+                <div class="col-sm-1 test_width" style="width: 140px">
+                    <label>
+                        <select name="change_brand" class="form-control m-b" onchange="change_info()"
+                                style="width: 110px">
+                            <option value="all">所有型号</option>
+                            {% for i in brands %}
+                            <option value="{{ i.0 }}"> {{ i.1 }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                </div>
+                <div class="col-sm-1 test_width" style="width: 140px">
+                    <label>
+                        <select name="change_type" class="form-control m-b" onchange="change_info()"
+                                style="width: 110px">
+                            <option value="all">所有类型</option>
+                            {% for i in host_type %}
+                            <option value="{{ i.0 }}"> {{ i.1 }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                </div>
+                <div id="replace">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th class="text-center"><input type="checkbox" id="select_all"
+                                                           onclick="check_all('asset_form')"></th>
+                            <th>服务器名</th>
+                            <th>IP地址</th>
+                            <th>项目</th>
+                            <th>IDC</th>
+                            <th>机型</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for info in host_info %}
+                        <tr class="gradeX">
+                            <td class="text-center"><input type="checkbox" name="selected" value="{{ info.id }}"></td>
+                            <td>{{ info.host_name }}</td>
+                            <td>{{ info.eth1 }}</td>
+                            <td>{{ info.business.project_name }}</td>
+                            <td>{{ info.idc.name }}</td>
+                            <td>{{ info.get_type_display }}</td>
+                            <td>{{ info.get_status_display }}</td>
+                            <td>
+                                <a href="/assets/host/detail/?idc_id={{info.id }}">
+                                    <button type="button" class="btn btn-info">详情</button>
+                                </a>
+                                <a href="/assets/host/edit/?idc_id={{ info.id }}&status=1">
+                                    <button type="button" class="btn btn-warning">编辑</button>
+                                </a>
+                                <a href="/assets/host/del/?idc_id={{ info.id }}&status=1">
+                                    <button type="button" class="btn btn-danger">删除</button>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
 
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div id="host_list">
-                                        <button type="button" class="btn btn-danger" id="host_del">批量删除</button>
-                                        <!--<a value="/assets/host_edit_batch/" type="button" class="btn btn-warning iframe" id="host_edit">批量修改</a>-->
-                                        <a href="/assets/host/add/" type="button" class="btn btn-info">添加主机</a>
-                                    </div>
-                                </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div id="host_list">
+                                <button type="button" class="btn btn-danger" id="host_del">批量删除</button>
+                                <!--<a value="/assets/host_edit_batch/" type="button" class="btn btn-warning iframe" id="host_edit">批量修改</a>-->
+                                <a href="/assets/host/add/" type="button" class="btn btn-info">添加主机</a>
                             </div>
                         </div>
-                    </form>
-
-                </div>
-            </div>
-            <div id="replace_2" class="row">
-                <div class="col-sm-7">
-                    <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                        <ul class="pagination pull-right">
-                            {{ page_str }}
-                        </ul>
                     </div>
                 </div>
+            </form>
+
+        </div>
+    </div>
+    <div id="replace_2" class="row">
+        <div class="col-sm-7">
+            <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                <ul class="pagination pull-right">
+                    {{ page_str }}
+                </ul>
             </div>
         </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block script %}
@@ -203,5 +219,6 @@
             }
         });
     }
+
 </script>
 {% endblock %}
