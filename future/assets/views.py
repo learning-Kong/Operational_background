@@ -246,3 +246,14 @@ def host_detail(request):
 def host_bak(request):
 
     return render(request, "assets/host_detail_bak.html")
+
+def host_edit(request):
+    if request.method == "GET":
+        host_form = Host_from()
+        uuid = int(request.GET.get('uuid', 0))
+        status = int(request.GET.get('status', 0))
+        print(uuid, status)
+        if uuid == 0 or status == 0:
+            return HttpResponse('错误输入')
+        host = models.Host.objects.filter(id=uuid).first()
+        return render(request, "assets/host_edit.html", {"host_form": host_form})

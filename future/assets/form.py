@@ -32,6 +32,7 @@ class Host_from(forms.ModelForm):
             "type": forms.Select(attrs={'class': 'form-control'}),
             "idc": forms.Select(attrs={'class': 'form-control'}),
             "eth1": forms.TextInput(attrs={'class': 'form-control '}),
+            "internal_ip": forms.TextInput(attrs={'class': 'form-control '}),
             "cpu": forms.TextInput(attrs={'class': 'form-control'}),
             "memory": forms.TextInput(attrs={'class': 'form-control'}),
             "hard_disk": forms.TextInput(attrs={'class': 'form-control'}),
@@ -44,5 +45,6 @@ class Host_from(forms.ModelForm):
         }
 
         error_messages = {
-            'eth1': [{"code": "required", "message": "请输入一个有效的 IPV4 地址"}]
+            'eth1': [{"code": "required", "message": "请输入一个有效的 IPV4 地址"}],
+            'internal_ip': [{"code": "required", "message": "请输入一个有效的 内网 地址"}]
         }
