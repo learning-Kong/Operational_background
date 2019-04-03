@@ -86,6 +86,7 @@ class Host(models.Model):
     type = models.IntegerField(verbose_name="机器类型", choices=TYPE_CHOICES, default=0, blank=True)
     eth1 = models.GenericIPAddressField(protocol="IPV4", null=True, verbose_name="IP地址", unique=True)
     eth2 = models.GenericIPAddressField(blank=True, null=True, verbose_name="IP地址2", default='null')
+    internal_ip = models.GenericIPAddressField(blank=True, null=True, verbose_name="IP地址2", default='10.0.0.1')
     cpu = models.CharField(max_length=64, blank=True, null=True, verbose_name='CPU')
     memory = models.CharField(max_length=64, blank=True, null=True, verbose_name="内存")
     hard_disk = models.CharField(max_length=64, blank=True, null=True, verbose_name='硬盘')

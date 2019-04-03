@@ -234,9 +234,15 @@ def host_search(request):
             return render(request, "assets/host_page.html", locals())
         return render(request, "assets/host_info_ajax.html", locals())
 
+@auth
 def host_detail(request):
-
-    return render(request, "assets/host_detail.html")
+    if request.method == ('GET'):
+        uuid = int(request.GET.get('uuid', 1))
+        host = models.Host.objects.filter(id=uuid).first()
+        print(type(host))
+        print(host.eth1)
+        print(uuid)
+        return render(request, "assets/host_detail.html", {'host': host})
 def host_bak(request):
 
     return render(request, "assets/host_detail_bak.html")

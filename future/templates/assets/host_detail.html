@@ -21,7 +21,7 @@
       <div class="box box-primary">
         <div class="box-header with-border">
           <i class="fa fa-bar-chart-o"></i>
-          <h3 class="box-title"><b>{{ host.eth1 }}192.168.168.1</b></h3>
+          <h3 class="box-title"><b>{{ host.eth1 }}</b></h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -48,47 +48,23 @@
                   </tr>
                   <tr>
                     <td class="K-text-navy">所属业务</td>
-                    <td>
-                      <table class="table">
-                        {% for s in host.business.all %}
-                        <tr>
-                          <td>{{ s.service_name }}</td>
-                        </tr>
-                        {% endfor %}
-                      </table>
-                    </td>
+                    <td>{{  host.business.project_name }}-{{  host.business.business_name }}</td>
                   </tr>
                   <tr>
                     <td class="K-text-navy">服务</td>
-                    <td>
-                      <table class="table">
-                        {% for s in host.service.all %}
-                        <tr>
-                          <td>{{ s.name }} -- {{ s.port }}</td>
-                        </tr>
-                        {% endfor %}
-                      </table>
-                    </td>
+                    <td>{{ host.get_server_type_display }}</td>
                   </tr>
                   <tr>
                     <td class="K-text-navy">环境</td>
-                    <td>{{ host.env}}</td>
+                    <td>{{ host.business.get_use_name_display }}</td>
                   </tr>
                   <tr>
                     <td class="K-text-navy">主机类型</td>
-                    {% if host.vm %}
-                    <td>虚拟机</td>
-                    {% else %}
-                    <td>物理机</td>
-                    {% endif %}
+                    <td>{{ host.get_type_display }}</td>
                   </tr>
                   <tr>
                     <td class="K-text-navy">IDC</td>
                     <td>{{ host.idc.name }} </td>
-                  </tr>
-                  <tr>
-                    <td class="K-text-navy">机柜信息</td>
-                    <td>{{ host.cabinet }} {% if host.server_cabinet_id %} - {{ host.server_cabinet_id }} {% endif %} </td>
                   </tr>
                   <tr>
                     <td class="K-text-navy">CPU</td>
@@ -108,7 +84,7 @@
                   </tr>
                   <tr>
                     <td class="K-text-navy">操作系统</td>
-                    <td>{{ host.system }} - {{ host.system_cpuarch }} </td>
+                    <td>{{ host.get_system_display }} - {{ host.system_version }} </td>
                   </tr>
                   <tr>
                     <td class="K-text-navy">添加日期</td>
