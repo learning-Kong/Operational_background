@@ -9,7 +9,7 @@ from .form import IDC_form, Project_form, Host_from
 from . import paging, paging1, page_change
 from django.db import IntegrityError
 
-Host_per_page = 3       #定义host list显示的每页个数（全局变量）
+Host_per_page = 5       #定义host list显示的每页个数（全局变量）
 
 # Create your views here.
 @auth
@@ -146,8 +146,6 @@ def host_add(request):
     if request.method == "POST":
         obj = Host_from(request.POST)
         if not obj.is_valid():
-            print(obj.is_valid())
-            print(obj.errors)
             return render(request, 'assets/host_add.html', {'host_form': obj})
         else:
             obj.save()
@@ -249,11 +247,23 @@ def host_bak(request):
 
 def host_edit(request):
     if request.method == "GET":
-        host_form = Host_from()
         uuid = int(request.GET.get('uuid', 0))
         status = int(request.GET.get('status', 0))
         print(uuid, status)
         if uuid == 0 or status == 0:
             return HttpResponse('错误输入')
-        host = models.Host.objects.filter(id=uuid).first()
+        host = models.Host.objects.get(id=uuid)
+        host_form = Host_from(instance=host)
         return render(request, "assets/host_edit.html", {"host_form": host_form})
+    if request.method == "POST":
+        obj = Host_from(request.POST)
+        print(obj.is_valid())
+        info = obj.clean()
+        print(info)
+        if not obj.is_valid():
+            return render(request, 'assets/host_edit.html', {'host_form': obj})
+        else:
+            info = obj.clean()
+            print(info)
+            return HttpResponse(123)
+

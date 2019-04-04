@@ -39,6 +39,7 @@ class Host_from(forms.ModelForm):
             "system": forms.Select(attrs={'class': 'form-control'}),
             "system_version": forms.TextInput(attrs={'class': 'form-control'}),
             "business": forms.Select(attrs={'class': 'form-control'}),
+            "server_type": forms.Select(attrs={'class': 'form-control'}),
             "status": forms.Select(attrs={'class': 'form-control'}),
             "idle": forms.Select(attrs={'class': 'form-control'}),
             "editor": forms.Textarea(attrs={'class': 'textarea form-control'}),
