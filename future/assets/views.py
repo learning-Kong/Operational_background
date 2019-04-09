@@ -260,9 +260,13 @@ def host_edit(request):
         print(ip_info)
         host = models.Host.objects.get(eth1=ip_info)
         form = Host_from(instance=host, data=request.POST)
-        form.save()
-        if form.is_valid():
-            data['status'] = True
-            return HttpResponse(json.dumps(data))
-        else:
+        try:
+            form.save()
+            if form.is_valid():
+                data['status'] = True
+                return HttpResponse(json.dumps(data))
+            else:
+                return HttpResponse(json.dumps(data))
+        except:
+            print('asdasdad')
             return HttpResponse(json.dumps(data))
