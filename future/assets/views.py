@@ -8,6 +8,7 @@ from . import models
 from .form import IDC_form, Project_form, Host_from
 from . import paging, paging1, page_change
 from django.db import IntegrityError
+import json
 
 Host_per_page = 5       #定义host list显示的每页个数（全局变量）
 
@@ -241,29 +242,27 @@ def host_detail(request):
         print(host.eth1)
         print(uuid)
         return render(request, "assets/host_detail.html", {'host': host})
-def host_bak(request):
 
+def host_bak(request):
     return render(request, "assets/host_detail_bak.html")
 
 def host_edit(request):
     if request.method == "GET":
-        uuid = int(request.GET.get('uuid', 0))
-        status = int(request.GET.get('status', 0))
-        print(uuid, status)
-        if uuid == 0 or status == 0:
+        uuid = request.GET.get('uuid')
+        if uuid == 0:
             return HttpResponse('错误输入')
         host = models.Host.objects.get(id=uuid)
         host_form = Host_from(instance=host)
         return render(request, "assets/host_edit.html", {"host_form": host_form})
     if request.method == "POST":
-        obj = Host_from(request.POST)
-        print(obj.is_valid())
-        info = obj.clean()
-        print(info)
-        if not obj.is_valid():
-            return render(request, 'assets/host_edit.html', {'host_form': obj})
+        data = {'status': False}
+        ip_info = request.POST.get('eth1')
+        print(ip_info)
+        host = models.Host.objects.get(eth1=ip_info)
+        form = Host_from(instance=host, data=request.POST)
+        form.save()
+        if form.is_valid():
+            data['status'] = True
+            return HttpResponse(json.dumps(data))
         else:
-            info = obj.clean()
-            print(info)
-            return HttpResponse(123)
-
+            return HttpResponse(json.dumps(data))

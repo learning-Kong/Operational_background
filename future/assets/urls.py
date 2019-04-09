@@ -2,7 +2,8 @@
 # author: "Xianglei Kong"
 
 
-from django.urls import path
+from django.urls import path, re_path
+from django.conf.urls import url
 from . import views
 
 
@@ -19,7 +20,7 @@ urlpatterns = [
     path('host/list/', views.host_list),
     path('host/del_batch/', views.host_del_batch),
     path('host/change_info_ajax/', views.host_search),
-    path('host/edit/', views.host_edit),
+    url(r'^host/edit/', views.host_edit),
     path('host/detail/', views.host_detail),
-    path('host/bak/', views.host_bak)
+    path('host/bak/', views.host_bak),
 ]
