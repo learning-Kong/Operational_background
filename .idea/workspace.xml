@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="072b932f-e7ab-407a-97ca-9a617bdf4928" name="Default" comment="login-title">
+    <list default="true" id="072b932f-e7ab-407a-97ca-9a617bdf4928" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/future/assets/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/future/assets/form.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/future/assets/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/future/assets/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/future/templates/assets/host_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/future/templates/assets/host_add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/future/templates/assets/host_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/future/templates/assets/host_edit.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,20 +18,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/future/assets/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="261" column="19" lean-forward="true" selection-start-line="261" selection-start-column="19" selection-end-line="261" selection-end-column="19" />
+            <state relative-caret-position="296">
+              <caret line="268" column="30" selection-start-line="268" selection-start-column="30" selection-end-line="268" selection-end-column="30" />
               <folding>
                 <element signature="e#63#122#0" expanded="true" />
-                <element signature="e#430#1531#0" />
-                <element signature="e#1566#2115#0" />
-                <element signature="e#2833#3207#0" />
-                <element signature="e#3245#4309#0" />
-                <element signature="e#5137#5705#0" />
-                <element signature="e#5743#6146#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/future/login/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="host_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/future/templates/assets/host_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2400">
+              <caret line="120" column="36" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/future/future/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#630#662#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="host_info_ajax.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/future/templates/assets/host_info_ajax.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="26" column="62" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -41,47 +72,17 @@
       <file leaf-file-name="idc_add.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/future/templates/assets/idc_add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-664">
+            <state relative-caret-position="400">
               <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="idc_change.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/future/templates/assets/idc_change.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/future/assets/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-604">
-              <caret line="22" column="100" selection-start-line="22" selection-start-column="91" selection-end-line="22" selection-end-column="100" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="host_edit.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/future/templates/assets/host_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
-              <folding>
-                <element signature="n#style#0;n#script#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inspinia.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/future/static/JS/inspinia.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="149" lean-forward="true" selection-start-line="149" selection-end-line="149" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/future/templates/login/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="14" />
+            <state relative-caret-position="460">
+              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -89,38 +90,29 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/future/templates/login/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="119" column="51" lean-forward="true" selection-start-line="119" selection-start-column="51" selection-end-line="119" selection-end-column="51" />
+            <state relative-caret-position="2500">
+              <caret line="125" column="11" lean-forward="true" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/future/templates/user/user_add.html">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/future/future/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-900">
-              <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="180">
+              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="host_detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/future/templates/assets/host_detail.html">
+      <file leaf-file-name="host_edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/future/templates/assets/host_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" selection-end-column="55" />
+            <state relative-caret-position="3240">
+              <caret line="162" column="17" lean-forward="true" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
               <folding>
-                <element signature="n#div#0;n#div#0;n#section#1;n#!!top" />
+                <element signature="n#style#0;n#script#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_change.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/future/templates/user/user_change.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
-              <caret line="44" column="38" lean-forward="true" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -192,9 +184,9 @@
         <option value="$PROJECT_DIR$/future/assets/models.py" />
         <option value="$PROJECT_DIR$/future/templates/assets/host_add.html" />
         <option value="$PROJECT_DIR$/future/assets/form.py" />
-        <option value="$PROJECT_DIR$/future/assets/views.py" />
         <option value="$PROJECT_DIR$/future/static/JS/inspinia.js" />
         <option value="$PROJECT_DIR$/future/templates/assets/host_edit.html" />
+        <option value="$PROJECT_DIR$/future/assets/views.py" />
       </list>
     </option>
   </component>
@@ -239,6 +231,12 @@
               <item name="background" type="b2602c69:ProjectViewProjectNode" />
               <item name="background" type="462c0819:PsiDirectoryNode" />
               <item name="future" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="background" type="b2602c69:ProjectViewProjectNode" />
+              <item name="background" type="462c0819:PsiDirectoryNode" />
+              <item name="future" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -253,13 +251,6 @@
               <item name="background" type="462c0819:PsiDirectoryNode" />
               <item name="future" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="background" type="b2602c69:ProjectViewProjectNode" />
-              <item name="background" type="462c0819:PsiDirectoryNode" />
-              <item name="future" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="background" type="b2602c69:ProjectViewProjectNode" />
@@ -314,20 +305,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1539761962718</updated>
-    </task>
-    <task id="LOCAL-00022" summary="uwsgi">
-      <created>1545014449674</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1545014449674</updated>
-    </task>
-    <task id="LOCAL-00023" summary="uwsgi">
-      <created>1545029920871</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1545029920871</updated>
     </task>
     <task id="LOCAL-00024" summary="uwsgi">
       <created>1545030057776</created>
@@ -658,21 +635,35 @@
       <option name="project" value="LOCAL" />
       <updated>1554281881525</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="host-edit-2">
+      <created>1554800968911</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1554800968911</updated>
+    </task>
+    <task id="LOCAL-00072" summary="assest-edit-3">
+      <created>1554801367019</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1554801367019</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49923196" visible="true" weight="0.12802951" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49923196" visible="true" weight="0.12802951" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5052687" side_tool="true" weight="0.565976" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3293348" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" sideWeight="0.50076807" side_tool="true" weight="0.09325606" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4947313" visible="true" weight="0.4263904" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4947313" visible="true" weight="0.4263904" />
       <window_info id="Favorites" order="2" sideWeight="0.50076807" side_tool="true" weight="0.09325606" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -734,7 +725,8 @@
     <MESSAGE value="数据查询" />
     <MESSAGE value="login-title" />
     <MESSAGE value="host-add-edit-1" />
-    <option name="LAST_COMMIT_MESSAGE" value="host-add-edit-1" />
+    <MESSAGE value="assest-edit-3" />
+    <option name="LAST_COMMIT_MESSAGE" value="assest-edit-3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -826,8 +818,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/future/future/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        <state relative-caret-position="500">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#630#662#0" expanded="true" />
           </folding>
@@ -887,13 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/future/login/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://H:/pycharm/python-install/Lib/site-packages/django/forms/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -936,13 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/future/future/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="88" column="30" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/future/static/CSS/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60540">
@@ -952,18 +930,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/future/assets/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="50" />
-          <folding>
-            <element signature="e#51#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/future/templates/assets/host_info_ajax.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        <state relative-caret-position="460">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -992,13 +960,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="12" column="84" selection-start-line="12" selection-start-column="84" selection-end-line="12" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/future/templates/assets/host_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-680">
-          <caret line="121" column="57" selection-start-line="121" selection-start-column="54" selection-end-line="121" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -1042,8 +1003,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/future/templates/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="119" column="51" lean-forward="true" selection-start-line="119" selection-start-column="51" selection-end-line="119" selection-end-column="51" />
+        <state relative-caret-position="2500">
+          <caret line="125" column="11" lean-forward="true" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1068,35 +1029,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/future/assets/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="261" column="19" lean-forward="true" selection-start-line="261" selection-start-column="19" selection-end-line="261" selection-end-column="19" />
-          <folding>
-            <element signature="e#63#122#0" expanded="true" />
-            <element signature="e#430#1531#0" />
-            <element signature="e#1566#2115#0" />
-            <element signature="e#2833#3207#0" />
-            <element signature="e#3245#4309#0" />
-            <element signature="e#5137#5705#0" />
-            <element signature="e#5743#6146#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/future/templates/assets/host_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" selection-end-column="55" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#section#1;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/future/templates/assets/idc_add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-664">
+        <state relative-caret-position="400">
           <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
         </state>
       </provider>
@@ -1108,12 +1050,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/future/templates/assets/host_info_ajax.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="62" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/future/templates/assets/host_edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
+        <state relative-caret-position="3240">
+          <caret line="162" column="17" lean-forward="true" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#script#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/future/future/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/future/templates/assets/host_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="120" column="36" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/future/login/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/future/assets/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="268" column="30" selection-start-line="268" selection-start-column="30" selection-end-line="268" selection-end-column="30" />
+          <folding>
+            <element signature="e#63#122#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -158,7 +158,8 @@
                     location.href="/assets/host/detail/?uuid="+uuid;
                 }
                 else{
-                    alert('更新错误');
+                    var message = data.message;
+                    alert(message);
                 }
             }
         });

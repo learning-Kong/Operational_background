@@ -255,9 +255,8 @@ def host_edit(request):
         host_form = Host_from(instance=host)
         return render(request, "assets/host_edit.html", {"host_form": host_form})
     if request.method == "POST":
-        data = {'status': False}
+        data = {'status': False, 'message': ''}
         ip_info = request.POST.get('eth1')
-        print(ip_info)
         host = models.Host.objects.get(eth1=ip_info)
         form = Host_from(instance=host, data=request.POST)
         try:
@@ -267,6 +266,6 @@ def host_edit(request):
                 return HttpResponse(json.dumps(data))
             else:
                 return HttpResponse(json.dumps(data))
-        except:
-            print('asdasdad')
+        except Exception as e:
+            data['message'] = str(e)
             return HttpResponse(json.dumps(data))
