@@ -238,9 +238,6 @@ def host_detail(request):
     if request.method == ('GET'):
         uuid = int(request.GET.get('uuid', 1))
         host = models.Host.objects.filter(id=uuid).first()
-        print(type(host))
-        print(host.eth1)
-        print(uuid)
         return render(request, "assets/host_detail.html", {'host': host})
 
 def host_bak(request):
@@ -262,6 +259,9 @@ def host_edit(request):
         try:
             form.save()
             if form.is_valid():
+                print(form.__dict__.get("initial"))
+                print(request.POST.dict())
+
                 data['status'] = True
                 return HttpResponse(json.dumps(data))
             else:

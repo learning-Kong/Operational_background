@@ -99,3 +99,9 @@ class Host(models.Model):
     status = models.IntegerField(verbose_name="机器状态", choices=SERVER_STATUS, default=0, blank=True)
     idle = models.BooleanField(verbose_name="状态", choices=BOOL_CHOICES, default=False)
     editor = models.TextField(blank=True, null=True, verbose_name="备注")
+
+class Host_Record(models.Model):
+    user = models.CharField(max_length=64, blank=True, verbose_name="用户名")
+    host = models.ForeignKey(to="Host", to_field="id", on_delete=models.CASCADE)
+    content = models.TextField(blank=True, verbose_name="修改内容")
+    time = models.DateTimeField(auto_now_add=True, verbose_name="修改时间")
