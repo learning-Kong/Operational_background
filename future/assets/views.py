@@ -15,13 +15,11 @@ Host_per_page = 5       #定义host list显示的每页个数（全局变量）
 
 def get_diff(obj1, obj2, username):
     text_list = []
-    change = {}
-    change_old = {}
     da1, da2 = obj1, obj2.dict()
     id = obj1['id']
     for k, v in da1.items():
-        field = models.Host._meta.get_field(k).verbose_name
-        print(field)
+        field = models.Host._meta.get_field(k).verbose_name ## 获取表单lable
+        # print(field)
         if str(v) != da2.get(k):
             if k == "idc":
                 old = models.IDC.objects.filter(id=v)
@@ -35,30 +33,50 @@ def get_diff(obj1, obj2, username):
                 else:
                     new_name = u'无'
                 text = field + u'由' + old_name + u'更改为' + new_name
-                text_list.append(text)
             elif k == "id":
                 continue
             elif k == "business":
                 old = models.Project.objects.filter(id=v)
                 new = models.Project.objects.filter(id=da2.get(k))
+                print(old)
+                print(new)
                 if old:
-                    old_name = old[0].name
+                    old_name = old[0].project_name
                 else:
                     old_name = u'无'
                 if new:
-                    new_name = new[0].name
+                    new_name = new[0].project_name
                 else:
                     new_name = u'无'
                 text = field + u'由' + old_name + u'更改为' + new_name
-                text_list.append(text)
+            elif k == "server_type":
+                old_name = models.SERVER_TYPE[v][1]
+                new_name = models.SERVER_TYPE[int(da2.get(k))][1]
+                text = field + u'由' + old_name + u'更改为' + new_name
+            elif k == "type":
+                old_name = models.TYPE_CHOICES[v][1]
+                new_name = models.TYPE_CHOICES[int(da2.get(k))][1]
+                text = field + u'由' + old_name + u'更改为' + new_name
+            elif k == "system":
+                old_name = models.SYSTEM_CHOICES[v][1]
+                new_name = models.SYSTEM_CHOICES[int(da2.get(k))][1]
+                text = field + u'由' + old_name + u'更改为' + new_name
+            elif k == "idle":
+                if v == "True":
+                    old_name = u"使用中"
+                    new_name = u"空闲"
+                else:
+                    old_name = u"空闲"
+                    new_name = u"使用中"
+                text = field + u'由' + old_name + u'更改为' + new_name
+            elif k == "status":
+                old_name = models.SERVER_STATUS[v][1]
+                new_name = models.SERVER_STATUS[int(da2.get(k))][1]
+                text = field + u'由' + old_name + u'更改为' + new_name
             else:
                 text = field + u'由' + str(v) + u'更改为' + str(da2.get(k))
-                text_list.append(text)
-            change[k] = v
-            change_old[k] = da2.get(k)
+            text_list.append(text)
 
-    # print(change)
-    # print(change_old)
     if len(text_list) != 0:
         models.Host_Record.objects.create(user=username, host_id=id, content=text_list)
 # Create your views here.
@@ -303,20 +321,20 @@ def host_edit(request):
         return render(request, "assets/host_edit.html", {"host_form": host_form})
     if request.method == "POST":
         data = {'status': False, 'message': ''}
-        ip_info = request.POST.get('eth1')
-        host = models.Host.objects.get(eth1=ip_info)
+        uuid = request.GET.get('uuid')
+        host = models.Host.objects.get(id=uuid)
         form = Host_from(instance=host, data=request.POST)
-        try:
-            form.save()
-            if form.is_valid():
-                # print(form.__dict__.get("initial"))
-                # print(request.POST.dict())
-                username = request.session['username']
-                get_diff(form.__dict__.get('initial'), request.POST, username)
-                data['status'] = True
-                return HttpResponse(json.dumps(data))
-            else:
-                return HttpResponse(json.dumps(data))
-        except Exception as e:
-            data['message'] = str(e)
+        # try:
+        form.save()
+        if form.is_valid():
+            # print(form.__dict__.get("initial"))
+            # print(request.POST.dict())
+            username = request.session['username']
+            get_diff(form.__dict__.get('initial'), request.POST, username)
+            data['status'] = True
             return HttpResponse(json.dumps(data))
+        else:
+            return HttpResponse(json.dumps(data))
+        # except Exception as e:
+        data['message'] = str(e)
+        return HttpResponse(json.dumps(data))
