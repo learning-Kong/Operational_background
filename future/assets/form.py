@@ -49,3 +49,4 @@ class Host_from(forms.ModelForm):
             'eth1': [{"code": "required", "message": "请输入一个有效的 IPV4 地址"}],
             'internal_ip': [{"code": "required", "message": "请输入一个有效的 内网 地址"}]
         }
+

@@ -12,6 +12,55 @@ import json
 
 Host_per_page = 5       #定义host list显示的每页个数（全局变量）
 
+
+def get_diff(obj1, obj2, username):
+    text_list = []
+    change = {}
+    change_old = {}
+    da1, da2 = obj1, obj2.dict()
+    id = obj1['id']
+    for k, v in da1.items():
+        field = models.Host._meta.get_field(k).verbose_name
+        print(field)
+        if str(v) != da2.get(k):
+            if k == "idc":
+                old = models.IDC.objects.filter(id=v)
+                new = models.IDC.objects.filter(id=da2.get(k))
+                if old:
+                    old_name = old[0].name
+                else:
+                    old_name = u'无'
+                if new:
+                    new_name = new[0].name
+                else:
+                    new_name = u'无'
+                text = field + u'由' + old_name + u'更改为' + new_name
+                text_list.append(text)
+            elif k == "id":
+                continue
+            elif k == "business":
+                old = models.Project.objects.filter(id=v)
+                new = models.Project.objects.filter(id=da2.get(k))
+                if old:
+                    old_name = old[0].name
+                else:
+                    old_name = u'无'
+                if new:
+                    new_name = new[0].name
+                else:
+                    new_name = u'无'
+                text = field + u'由' + old_name + u'更改为' + new_name
+                text_list.append(text)
+            else:
+                text = field + u'由' + str(v) + u'更改为' + str(da2.get(k))
+                text_list.append(text)
+            change[k] = v
+            change_old[k] = da2.get(k)
+
+    # print(change)
+    # print(change_old)
+    if len(text_list) != 0:
+        models.Host_Record.objects.create(user=username, host_id=id, content=text_list)
 # Create your views here.
 @auth
 def idc_add(request):
@@ -238,7 +287,8 @@ def host_detail(request):
     if request.method == ('GET'):
         uuid = int(request.GET.get('uuid', 1))
         host = models.Host.objects.filter(id=uuid).first()
-        return render(request, "assets/host_detail.html", {'host': host})
+        host_record = models.Host_Record.objects.filter(host_id=uuid).order_by('-time')
+        return render(request, "assets/host_detail.html", {'host': host, "host_record": host_record})
 
 def host_bak(request):
     return render(request, "assets/host_detail_bak.html")
@@ -259,9 +309,10 @@ def host_edit(request):
         try:
             form.save()
             if form.is_valid():
-                print(form.__dict__.get("initial"))
-                print(request.POST.dict())
-
+                # print(form.__dict__.get("initial"))
+                # print(request.POST.dict())
+                username = request.session['username']
+                get_diff(form.__dict__.get('initial'), request.POST, username)
                 data['status'] = True
                 return HttpResponse(json.dumps(data))
             else:

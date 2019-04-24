@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load humanize %}
+{% load business_tag %}
 {% block title %} 详细信息 {% endblock %}
 {% block css %}
 <link rel="stylesheet" href="/static/CSS/new_style.css">
@@ -136,20 +138,32 @@
             <h3>主机修改历史记录</h3>
             <small><i class="fa fa-map-marker"></i> 此主机所有修改历史记录.</small>
           </div>
+          <div class="ibox-content">
+            <div class="feed-activity-list">
+              {% if host_record %}
+              {% for i in host_record %}
+              <div class="feed-element">
+                <div>
+                  <small class="pull-right">{{ i.time|naturaltime }}</small>
+                  <strong class="text-navy">{{ i.user }}</strong>
+                  {% for r in i.content|str_to_list %}
+                  <div>{{ r }}</div>
+                  {% endfor %}
+                  <small class="text-success">{{i.time}}</small>
+                </div>
+              </div>
+              {% endfor %}
+              {% else %}
+              <p class="text-center">(暂无)</p>
+              {% endif %}
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  </div>
 </section>
 {% endblock %}
 {% block script %}
-<!--<script style="/static/JS/inspinia.js"></script>-->
-<!--<script>-->
-<!--$(document).ready(function(){-->
-<!--$('#show').click(function(){-->
-<!--$('#show').css('display', 'none');-->
-<!--$('#more').css('display', 'block');-->
-<!--})-->
-<!--})-->
-<!--</script>-->
 {% endblock %}
