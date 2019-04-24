@@ -324,17 +324,17 @@ def host_edit(request):
         uuid = request.GET.get('uuid')
         host = models.Host.objects.get(id=uuid)
         form = Host_from(instance=host, data=request.POST)
-        # try:
-        form.save()
-        if form.is_valid():
-            # print(form.__dict__.get("initial"))
-            # print(request.POST.dict())
-            username = request.session['username']
-            get_diff(form.__dict__.get('initial'), request.POST, username)
-            data['status'] = True
+        try:
+            form.save()
+            if form.is_valid():
+                # print(form.__dict__.get("initial"))
+                # print(request.POST.dict())
+                username = request.session['username']
+                get_diff(form.__dict__.get('initial'), request.POST, username)
+                data['status'] = True
+                return HttpResponse(json.dumps(data))
+            else:
+                return HttpResponse(json.dumps(data))
+        except Exception as e:
+            data['message'] = str(e)
             return HttpResponse(json.dumps(data))
-        else:
-            return HttpResponse(json.dumps(data))
-        # except Exception as e:
-        data['message'] = str(e)
-        return HttpResponse(json.dumps(data))
