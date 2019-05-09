@@ -119,9 +119,9 @@
                                 <a href="/assets/host/edit/?uuid={{ info.id }}">
                                     <button type="button" class="btn btn-warning">编辑</button>
                                 </a>
-                                <a href="/assets/host/del/?uuid={{ info.id }}&status=1">
-                                    <button type="button" class="btn btn-danger">删除</button>
-                                </a>
+                                <!--<a href="/assets/host/del/?uuid={{ info.id }}&status=1">-->
+                                <button id="del_type" type="button" class="btn btn-danger" value="{{info.id}}">删除</button>
+                                <!--</a>-->
                             </td>
                         </tr>
                         {% endfor %}
@@ -178,6 +178,10 @@
                 });
             }
         });
+    });
+    $('#del_type').click(function(){
+        var id = this.value;
+        alert(id);
     });
     function change_info(){
         var formdata = $("#asset_form").serialize();
