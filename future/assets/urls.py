@@ -22,5 +22,6 @@ urlpatterns = [
     path('host/change_info_ajax/', views.host_search),
     url(r'^host/edit/', views.host_edit),
     path('host/detail/', views.host_detail),
+    path('host/del/', views.host_del),
     path('host/bak/', views.host_bak),
 ]

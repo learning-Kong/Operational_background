@@ -229,7 +229,6 @@ def host_list(request):
         per_page = Host_per_page  # 每页显示个数
         page_num = 7  # 页数标签个数
         page_obj = paging1.Page(current_page, num, per_page, page_num, url)
-        print(page_obj.start(), page_obj.end())
         host_info = models.Host.objects.filter()[page_obj.start():page_obj.end()]
         page_str = page_obj.page_str()
         idc_name = models.IDC.objects.values("id", "name").distinct()
@@ -338,3 +337,9 @@ def host_edit(request):
         except Exception as e:
             data['message'] = str(e)
             return HttpResponse(json.dumps(data))
+
+def host_del(request):
+    if request.method == ('POST'):
+        id = int(request.POST.get('id'))
+        print(id)
+        return HttpResponse('nice')
