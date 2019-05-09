@@ -120,7 +120,7 @@
                                     <button type="button" class="btn btn-warning">编辑</button>
                                 </a>
                                 <!--<a href="/assets/host/del/?uuid={{ info.id }}&status=1">-->
-                                <button id="del_type" type="button" class="btn btn-danger" value="{{info.id}}">删除</button>
+                                <button type="button" class="btn btn-danger del_type" value="{{info.id}}">删除</button>
                                 <!--</a>-->
                             </td>
                         </tr>
@@ -179,7 +179,7 @@
             }
         });
     });
-    $('#del_type').click(function(){
+    $('.del_type').click(function(){
         var id = this.value;
         alert(id);
     });
