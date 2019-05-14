@@ -342,4 +342,5 @@ def host_del(request):
     if request.method == ('POST'):
         id = int(request.POST.get('id'))
         print(id)
+        models.Host.objects.filter(id=id).delete()
         return HttpResponse('nice')
