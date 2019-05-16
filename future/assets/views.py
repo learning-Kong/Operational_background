@@ -257,11 +257,7 @@ def host_list(request):
 def host_del_batch(request):
     if request.method == "POST":
         data = request.POST.get('ids')
-        print(data)
-        del_id = data.split(',')
-        for i in del_id:
-            print(i)
-        print(del_id)
+        models.Host.objects.extra(where=["id IN ("+ data +")"]).delete()
         return HttpResponse('nice')
     if request.method == "GET":
         return HttpResponse('请求错误')
@@ -278,15 +274,15 @@ def host_search(request):
         change_type = request.GET.get("change_type")
         status = request.GET.get("status", '')
         current_page = int(request.GET.get("p", 1))
-        print("下面是P的值", current_page)
+        # print("下面是P的值", current_page)
         page_str = 1
         host_dict = {"idc_id": change_idc, "business_id": change_business, "server_type": change_service, "status": change_status, "system": change_brand, "type": change_type}
         select = {}
         for key, value in host_dict.items():
             if value != "all":
                 select[key] = value
-        print(change_idc, change_business, change_service, change_status, change_brand, change_type)
-        print(select)
+        # print(change_idc, change_business, change_service, change_status, change_brand, change_type)
+        # print(select)
         host_info = models.Host.objects.filter(**select)[(current_page-1)*Host_per_page:current_page*Host_per_page]
         if status:
             current_page = int(request.GET.get('p', 1))  # 获取当前页码
