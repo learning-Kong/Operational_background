@@ -257,7 +257,7 @@ def host_list(request):
 def host_del_batch(request):
     if request.method == "POST":
         data = request.POST.get('ids')
-        models.Host.objects.extra(where=["id IN ("+ data +")"]).delete()
+        models.Host.objects.extra(where=["id IN ("+ data +")"]).delete() ##批量删除方法
         return HttpResponse('nice')
     if request.method == "GET":
         return HttpResponse('请求错误')
