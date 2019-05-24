@@ -301,6 +301,7 @@ def host_detail(request):
         uuid = int(request.GET.get('uuid', 1))
         host = models.Host.objects.filter(id=uuid).first()
         host_record = models.Host_Record.objects.filter(host_id=uuid).order_by('-time')
+        
         return render(request, "assets/host_detail.html", {'host': host, "host_record": host_record})
 
 def host_bak(request):
