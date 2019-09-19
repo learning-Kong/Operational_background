@@ -46,3 +46,7 @@ def home(request):
 def logout(request):
     request.session.flush()
     return redirect('/login/')
+
+@auth
+def wait(request):
+    return render(request, 'login/wait.html')

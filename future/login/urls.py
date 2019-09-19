@@ -8,4 +8,5 @@ urlpatterns = [
     path('', views.login),
     path('home/', views.home),
     path('logout/', views.logout),
+    path('wait/', views.wait),
 ]
